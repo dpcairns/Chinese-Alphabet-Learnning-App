@@ -26,12 +26,12 @@ Create the alphabet Data as an array of objects --  1. id 2. name 3. audio sourc
     - styling
 
 *Testing Page*
-- get user
-    - check and see if user account exists
 - questions on the test match the number of objects available
     - matching object id's
 - random display of questions
 - randomize the choices
+- get user
+    - check and see if user account exists
 - update user state per question
 - display correct/incorrect answer to the DOM per question
  
