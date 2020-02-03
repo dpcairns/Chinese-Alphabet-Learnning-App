@@ -12,18 +12,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const yunMu = [
     { id:'a', name:'a', audio:'a.mp3' },
     { id:'o', name:'o',audio:'o.mp3' },
@@ -50,26 +38,6 @@ const yunMu = [
     { id:'ing', name:'ing',audio: 'ing.mp3' },
     { id:'ong', name:'ong',audio: 'ong.mp3' }
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
