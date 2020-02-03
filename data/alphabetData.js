@@ -1,4 +1,4 @@
-const shengMu = [
+export const shengMuArray = [
     { id: 'b', name: 'b', audio: 'b.mp3' },
     { id: 'p', name: 'p', audio: 'p.mp3' },
     { id: 'm', name: 'm', audio: 'm.mp3' },
@@ -24,13 +24,13 @@ const shengMu = [
     { id: 'w', name: 'w', audio: 'w.mp3' },
 ];
 
-const yunMu = [
+export const yunMuArray = [
     { id: 'a', name: 'a', audio: 'a.mp3' },
     { id: 'o', name: 'o', audio: 'o.mp3' },
     { id: 'e', name: 'e', audio: 'e.mp3' },
     { id: 'i', name: 'i', audio: 'yi.mp3' },
     { id: 'u', name: 'u', audio: 'u.mp3' },
-    { id: 'v', name: 'v', audio: 'v.mp3' },
+    { id: 'v', name: 'ü', audio: 'v.mp3' },
     { id: 'ai', name: 'ai', audio: 'ai.mp3' },
     { id: 'ei', name: 'ei', audio: 'ei.mp3' },
     { id: 'ui', name: 'ui', audio: 'ui.mp3' },
@@ -38,13 +38,13 @@ const yunMu = [
     { id: 'ou', name: 'ou', audio: 'ou.mp3' },
     { id: 'iu', name: 'iu', audio: 'iu.mp3' },
     { id: 'ie', name: 'ie', audio: 'ie.mp3' },
-    { id: 've', name: 've', audio: 've.mp3' },
+    { id: 've', name: 'üe', audio: 've.mp3' },
     { id: 'er', name: 'er', audio: 'er.mp3' },
     { id: 'an', name: 'an', audio: 'an.mp3' },
     { id: 'en', name: 'en', audio: 'en.mp3' },
     { id: 'in', name: 'in', audio: 'in.mp3' },
     { id: 'un', name: 'un', audio: 'un.mp3' },
-    { id: 'vn', name: 'vn', audio: 'vn.mp3' },
+    { id: 'vn', name: 'ün', audio: 'vn.mp3' },
     { id: 'ang', name: 'ang', audio: 'ang.mp3' },
     { id: 'eng', name: 'eng', audio: 'eng.mp3' },
     { id: 'ing', name: 'ing', audio: 'ing.mp3' },
@@ -52,28 +52,31 @@ const yunMu = [
 ];
 
 
-const zhengTi = [{ id: 'zhi', name: 'zhi', audio: 'zhi.mp3' },
-{ id: 'chi', name: 'chi', audio: 'chi.mp3' },
-{ id: 'shi', name: 'shi', audio: 'shi.mp3' },
-{ id: 'ri', name: 'ri', audio: 'ri.mp3' },
-{ id: 'zi', name: 'zi', audio: 'zi.mp3' },
-{ id: 'ci', name: 'ci', audio: 'ci.mp3' },
-{ id: 'si', name: 'si', audio: 'si.mp3' },
-{ id: 'yi', name: 'yi', audio: 'yi.mp3' },
-{ id: 'wu', name: 'wu', audio: 'wu.mp3' },
-{ id: 'yu', name: 'yu', audio: 'yu.mp3' },
-{ id: 'ye', name: 'ye', audio: 'ye.mp3' },
-{ id: 'yue', name: 'yue', audio: 'yue.mp3' },
-{ id: 'yuan', name: 'yuan', audio: 'yuan.mp3' },
-{ id: 'yin', name: 'yin', audio: 'yin.mp3' },
-{ id: 'yun', name: 'yun', audio: 'yun.mp3' },
-{ id: 'ying', name: 'ying', audio: 'ying.mp3' },
-
-
+export const zhengTiArray = [
+    { id: 'zhi', name: 'zhi', audio: 'zhi.mp3' },
+    { id: 'chi', name: 'chi', audio: 'chi.mp3' },
+    { id: 'shi', name: 'shi', audio: 'shi.mp3' },
+    { id: 'ri', name: 'ri', audio: 'ri.mp3' },
+    { id: 'zi', name: 'zi', audio: 'zi.mp3' },
+    { id: 'ci', name: 'ci', audio: 'ci.mp3' },
+    { id: 'si', name: 'si', audio: 'si.mp3' },
+    { id: 'yi', name: 'yi', audio: 'yi.mp3' },
+    { id: 'wu', name: 'wu', audio: 'wu.mp3' },
+    { id: 'yu', name: 'yu', audio: 'yu.mp3' },
+    { id: 'ye', name: 'ye', audio: 'ye.mp3' },
+    { id: 'yue', name: 'yue', audio: 'yue.mp3' },
+    { id: 'yuan', name: 'yuan', audio: 'yuan.mp3' },
+    { id: 'yin', name: 'yin', audio: 'yin.mp3' },
+    { id: 'yun', name: 'yun', audio: 'yun.mp3' },
+    { id: 'ying', name: 'ying', audio: 'ying.mp3' },
 ];
 
 
-
+export const alphabetArray = [
+    shengMuArray,
+    yunMuArray,
+    zhengTiArray
+];
 
 
 
