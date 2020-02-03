@@ -21,7 +21,7 @@ export const shengMuArray = [
     { id: 'c', name: 'c', audio: 'c.mp3' },
     { id: 's', name: 's', audio: 's.mp3' },
     { id: 'y', name: 'y', audio: 'y.mp3' },
-    { id: 'w', name: 'w', audio: 'w.mp3' },
+    { id: 'w', name: 'w', audio: 'w.mp3' }
 ];
 
 export const yunMuArray = [
