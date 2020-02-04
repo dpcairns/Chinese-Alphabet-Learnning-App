@@ -49,4 +49,5 @@ export function generateRandomChoices(arr, numOfChoices) {
 export const filteredArray = shengMuArray.filter(item => item.id !== correctAnswer.id);
 
 
-console.log(generateRandomChoices(filteredArray, 3));
+export const fourChoiceArray = (generateRandomChoices(filteredArray, 3));
+console.log(fourChoiceArray);

@@ -1,21 +1,21 @@
-import { generateRandomChoices, filteredArray } from './game.js';
+import { generateRandomChoices, fourChoiceArray } from './game.js';
+fourChoiceArray.forEach(choice =>{
+    const choiceForm = document.getElementById('choice-form');
+    const choiceContainer = document.createElement('label');
+    choiceForm.appendChild(choiceContainer);
+    const displayAlphabetSpan = document.createElement('span');
+    choiceContainer.appendChild(displayAlphabetSpan);
+    displayAlphabetSpan.textContent = choice.name;
+    const radioChoice = document.createElement('input');
+    choiceContainer.appendChild(radioChoice);
+    console.log(choiceForm);
 
-const choiceForm = document.getElementById('choice-form');
-const answerButton = document.getElementById('answer-button');
-const radioChoice = document.createElement('input');
-const choiceText = document.getElementById('choices');
-
-radioChoice.textContent = 'something';
-radioChoice.type = 'radio';
-choiceText.appendChild(radioChoice);
-
-
-// filteredArray.forEach(index => {
-
-//     radioChoice.appendChild(index.);
-// })
-
-choiceForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+    radioChoice.value = '';
+    radioChoice.type = 'radio';
+    radioChoice.name = choice.name;
 });
+
+// choiceForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+
+// });
