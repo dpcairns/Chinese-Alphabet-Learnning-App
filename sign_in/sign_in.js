@@ -1,5 +1,5 @@
-//import
-//import
+import { saveUser } from '../utils/saveuser.js';
+import { makeUser } from '../utils/makeuser.js';
 
 // gabbing some dom
 const userSignUp = document.getElementById('user-sign-up');
@@ -14,22 +14,8 @@ userSignUp.addEventListener('submit', (e) => {
     // creating the user object
     const user = makeUser(formData);
     saveUser(user);
-    console.log(user);
+    // console.log(user);
 });
 
-// creates a new user object from the form
-function makeUser(formData) {
-    const user = {
-        name: formData.get('name'),
-        result: { correct: 0, incorrect: 0 },
 
-    };
-    return user;
-}
 
-// stringify the user input into local storage
-function saveUser(user) {
-    const json = JSON.stringify(user);
-    localStorage.setItem('user', json);
-
-}
