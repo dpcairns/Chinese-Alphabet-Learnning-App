@@ -5,9 +5,9 @@ import { findByAudio } from '../utils/findById.js';
 // generating a random number by the length of the array
 let index = Math.floor(Math.random() * shengMuArray.length);
 const soundButton = document.getElementById('sound-button');
-// assigning a random sound from the array
+// assigning a random sound from the array as correct answer
 const randomShengMuSound = shengMuArray[index].audio;
-const randomShengMuSoundObject = findByAudio(shengMuArray, randomShengMuSound);
+const correctAnswer = findByAudio(shengMuArray, randomShengMuSound);
 
 
 // console.log(randomShengMuSound);
@@ -32,18 +32,25 @@ function generateRandomChoices(arr, numOfChoices) {
     // loop through the array and grab a random choice for each number of choices
     for (let i = 0; i < numOfChoices; i++) {
         let choiceIndex = Math.floor(Math.random() * currentArray.length);
+        
+        if (correctAnswer.id !== currentArray[choiceIndex]){
         // populate the empty array with .push for each choice needed
-        output.push(currentArray[choiceIndex]);
-        // add the correct answer to the array
-        // output.push(randomShengMuSoundObject);
+            output.push(currentArray[choiceIndex]);
 
+        }
+       
+        
         // checking that the current array isn't duplicated        
         currentArray = currentArray.filter(item => {
             return item !== currentArray[choiceIndex];
         });
     }
+     // add the correct answer to the array
+    output.push(correctAnswer);
     return output;
 }
 
+const filteredArray = shengMuArray.filter(item => item.id !== correctAnswer.id);
 
-console.log(generateRandomChoices(shengMuArray, 3));
+
+console.log(generateRandomChoices(filteredArray, 3));
