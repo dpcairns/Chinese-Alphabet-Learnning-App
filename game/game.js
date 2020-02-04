@@ -21,32 +21,3 @@ soundButton.addEventListener('click', () => {
     soundButton.appendChild(audio);
 
 });
-
-// generates random choices for the test question
-export function generateRandomChoices(arr, numOfChoices) {
-    // creates an empty array 
-    const output = [];
-    let currentArray = arr;
-
-    // loop through the array and grab a random choice for each number of choices
-    for (let i = 0; i < numOfChoices; i++) {
-        let choiceIndex = Math.floor(Math.random() * currentArray.length);
-
-        // populate the empty array with .push for each choice needed
-        output.push(currentArray[choiceIndex]);
-
-        // checking that the current array isn't duplicated        
-        currentArray = currentArray.filter(item => {
-            return item !== currentArray[choiceIndex];
-        });
-    }
-    // add the correct answer to the array
-    output.push(correctAnswer);
-    return output;
-}
-
-// removing the correct answer from available answers
-export const filteredArray = shengMuArray.filter(item => item.id !== correctAnswer.id);
-
-
-console.log(generateRandomChoices(filteredArray, 3));
