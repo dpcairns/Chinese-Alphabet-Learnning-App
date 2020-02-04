@@ -1,5 +1,5 @@
 import { shengMuArray } from '../data/alphabetData.js';
-import findById from '../utils/findById.js';
+//import findById from '../utils/findById.js';
 import { findByAudio } from '../utils/findById.js';
 
 // generating a random number by the length of the array
@@ -23,34 +23,30 @@ soundButton.addEventListener('click', () => {
 });
 
 // generates random choices for the test question
-function generateRandomChoices(arr, numOfChoices) {
+export function generateRandomChoices(arr, numOfChoices) {
     // creates an empty array 
     const output = [];
     let currentArray = arr;
 
-
     // loop through the array and grab a random choice for each number of choices
     for (let i = 0; i < numOfChoices; i++) {
         let choiceIndex = Math.floor(Math.random() * currentArray.length);
-        
-        if (correctAnswer.id !== currentArray[choiceIndex]){
-        // populate the empty array with .push for each choice needed
-            output.push(currentArray[choiceIndex]);
 
-        }
-       
-        
+        // populate the empty array with .push for each choice needed
+        output.push(currentArray[choiceIndex]);
+
         // checking that the current array isn't duplicated        
         currentArray = currentArray.filter(item => {
             return item !== currentArray[choiceIndex];
         });
     }
-     // add the correct answer to the array
+    // add the correct answer to the array
     output.push(correctAnswer);
     return output;
 }
 
-const filteredArray = shengMuArray.filter(item => item.id !== correctAnswer.id);
+// removing the correct answer from available answers
+export const filteredArray = shengMuArray.filter(item => item.id !== correctAnswer.id);
 
 
 console.log(generateRandomChoices(filteredArray, 3));
