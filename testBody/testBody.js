@@ -32,5 +32,5 @@ document.querySelectorAll('.singleSection').forEach(item => {
     item.addEventListener('click', event => {
         localStorage.setItem('section', item.id);
         window.location.href = '../game';
-    })
-})
+    });
+});

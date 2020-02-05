@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="game.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="magic.css">
     <title>Test Your Language Skills</title>
 </head>
 <nav>
@@ -22,17 +23,18 @@
         <button id="sound-button">What letter is this? 🔊
             <audio id="randomSoundFromData"></audio>
         </button>
+        <form id="choice-form">
+            
+            <div id="choices">
+            </div>
+            <div class="button-container">
+                <button id="answer-button">Choose</button>
+                <div id="display-test"></div>
+            </div>
+        </form>
+        <div id="next"><button id="next-button" class="puffOut">Next Question</button> </div>
+        
     </section>
-    <form id="choice-form">
-
-        <div id="choices">
-        </div>
-        <div class="button-container">
-            <button id="answer-button">Choose</button>
-            <div id="display-test"></div>
-        </div>
-    </form> 
-    <button id="next-button">Next Question</button>    
     <script type="module" src="render-quiz.js"></script>
 </body>
 
