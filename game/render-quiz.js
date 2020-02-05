@@ -82,7 +82,7 @@ function populateQuestion(item) {
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         choiceText.appendChild(answerOption);
-        
+
     });
 }
 
@@ -91,7 +91,7 @@ function checkAnswer() {
     const userChoice = formData.get('answers');
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
-    // change to make any of the three available arrays
+        // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
         displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
@@ -99,15 +99,15 @@ function checkAnswer() {
     }
     answerButton.disabled = true;
     saveUser(user);
-    document.getElementById('next-button').style.visibility = 'visible';   
-    
+    document.getElementById('next-button').style.visibility = 'visible';
+
     if (quizQuestions.length === 1) {
         user[selectedSection.id].completed = true;
         saveUser(user);
         console.log(user);
         window.location = '../results/';
-    
-    } 
+
+    }
 }
 
 function nextQuestion() {
@@ -128,7 +128,7 @@ function nextQuestion() {
 
 // generating a random number by the length of the array
 function generateQuestion(arr, fullArray) {
-    
+
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
     const selectedAnswer = arr[index];
