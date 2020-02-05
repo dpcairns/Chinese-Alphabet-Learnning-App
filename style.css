@@ -7,6 +7,10 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> f812261f3211c67e5b8559f988444cd7a14eb289
     width: 200px;
     background-color: #f1f1f1;
     float: right;
