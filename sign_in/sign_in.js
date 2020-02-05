@@ -14,7 +14,7 @@ userSignUp.addEventListener('submit', (e) => {
     // creating the user object
     const user = makeUser(formData);
     saveUser(user);
-    // console.log(user);
+    console.log(user);
 });
 
 

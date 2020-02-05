@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
+}
+
+#about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+        
+}
+
+p {
+    font-size: 24px;
+    font-family: Playfair, serif;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 64px;
+    color: black;
+    font-weight: bold;
+    font-family: Libre, serif;
+}
+
+h2 {
+    margin-bottom: 28px;
+    font-size: 28px;
+    font-family: Libre, serif;
+}
+
+img {
+    border-radius: 40rem;
+    height: 350px;
+    width: 350px;
+    opacity: .8;
+}
+
+img:hover {
+    opacity: 1;
+}
