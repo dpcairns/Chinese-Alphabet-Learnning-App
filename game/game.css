@@ -29,3 +29,8 @@ label {
 h1 {
     text-align: center;
 }
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
+}

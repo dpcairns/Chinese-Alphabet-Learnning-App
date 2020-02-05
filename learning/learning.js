@@ -7,6 +7,7 @@ shengMuArray.forEach(shengMu => {
     const button = document.createElement('button');
     shengMuSection.appendChild(button);
     button.appendChild(shengMuSpan);
+    button.className = "shengmu-button";
     shengMuSpan.textContent = shengMu.name;
 
     button.addEventListener('click', () => {
@@ -27,6 +28,7 @@ yunMuArray.forEach(yunMu => {
     const button = document.createElement('button');
     yunMuSection.appendChild(button);
     button.appendChild(yunMuSpan);
+    button.className = "yunmu-button";
     yunMuSpan.textContent = yunMu.name;
 
     button.addEventListener('click', () => {
@@ -48,6 +50,7 @@ zhengTiArray.forEach(zhengTi => {
     const button = document.createElement('button');
     zhengTiSection.appendChild(button);
     button.appendChild(zhengTiSpan);
+    button.className = "zhengti-button";
     zhengTiSpan.textContent = zhengTi.name;
 
     button.addEventListener('click', () => {
