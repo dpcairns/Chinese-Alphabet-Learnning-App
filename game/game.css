@@ -4,7 +4,7 @@
 }
 
 #testpage {
-    margin-top: 150px;
+    margin-top: 125px;
     padding-top: 15px;
     border: 1px solid black;
     width: 50%;
@@ -71,12 +71,14 @@ button:disabled {
     
 }
 
-#testname {
+h1#testname {
     font-size: 48px;
     top: 100px;
     position: relative;
+    left: 25%;
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
+    width: 50%;
     border-radius: 1.4rem;
-    background-size: cover;
+    
     
 }

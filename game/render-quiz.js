@@ -97,7 +97,7 @@ function checkAnswer() {
         // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
-        displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
+        displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id + '.';
         user[selectedSection.id].incorrect++;
     }
     answerButton.disabled = true;
