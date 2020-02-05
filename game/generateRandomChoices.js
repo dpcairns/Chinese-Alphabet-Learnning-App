@@ -12,9 +12,7 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
         // populate the empty array with .push for each choice needed
         output.push(filteredChoices[choiceIndex].id);
         // checking that the current array isn't duplicated        
-        filteredChoices = filteredChoices.filter(item => {
-            return item !== filteredChoices[choiceIndex];
-        });
+        filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
     }
     return [
         ...output.slice(0, insertIndex),
@@ -22,6 +20,14 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
         ...output.slice(insertIndex)
     ];
 }
+export function filterDuplicates(filteredChoices, choiceIndex) {
+    filteredChoices = filteredChoices.filter(item => {
+        return item !== filteredChoices[choiceIndex];
+    });
+    console.log(filteredChoices);
+    return filteredChoices;
+}
+
 export function filterChoices(arr, isNot) {
     return arr.filter(item => {
         return item.id !== isNot;

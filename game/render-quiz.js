@@ -2,7 +2,8 @@ import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 import { generateRandomChoices } from './generateRandomChoices.js';
-
+import { filterDuplicates } from './generateRandomChoices.js';
+import { filterChoices } from './generateRandomChoices.js';
 const user = getUser();
 
 //set when generateQuestion is called
@@ -138,6 +139,8 @@ function generateQuestion(arr, fullArray) {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
+    filterDuplicates();
+    filterChoices();
     console.log(selectedAnswer.id, 'selectedAnswer.id');
     console.log(fullArray, 'fullArray');
     
