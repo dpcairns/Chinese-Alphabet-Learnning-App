@@ -1,4 +1,4 @@
-import { alphabetArray, shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js';
+import { shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js';
 
 shengMuArray.forEach(shengMu => {
 

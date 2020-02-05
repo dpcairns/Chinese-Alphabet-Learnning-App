@@ -1,7 +1,7 @@
 * {
     margin: 0;
     text-align: center;
-
+    box-sizing: border-box;
 }
 
 section {
@@ -14,13 +14,13 @@ span {
 }
 
 h1 {
-    height: 35px;
     padding: 20px;
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
     border-radius: 1.4rem;
     background-size: cover;
     width: 40%;
     margin: 0 auto;
+    text-align: center;
 }
 
 body {

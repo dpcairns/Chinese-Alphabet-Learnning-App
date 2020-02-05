@@ -3,16 +3,21 @@
     text-align: center;
 }
 
-#sound-button {
-    padding: 20px;
-    border: 1px solid black;
-    margin: 20px;
+#answer-button, #sound-button {
+    background-color: transparent;
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    border: 1px solid teal;
+    text-transform: uppercase;
+    font-size: 48px;
+    
 }
-
-#answer-button {
-    padding: 20px;
-    border: 1px solid black;
-    margin: 20px;
+#answer-button:hover {
+    cursor: pointer;
+    background-color: rgb(142, 213, 213);
+    color: white;
+    font-size: 48px;
 }
 
 input {
@@ -21,7 +26,7 @@ input {
 }
 
 label {
-    font-size: 24px;
+    font-size: 48px;
     margin-left: 20px;
 }
 h1 {
