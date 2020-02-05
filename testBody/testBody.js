@@ -15,6 +15,8 @@ function renderLink(singleSection) {
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
         link.setAttribute('disabled', '');
+        link.textContent = 'test completed';
+        link.style.backgroundColor = '#F2133C';
     }
 
     return link;
@@ -29,13 +31,11 @@ for (let i = 0; i < alphabetData.length; i++) {
 
 //does this need to be all
 document.querySelectorAll('.singleSection').forEach(item => {
-    item.addEventListener('click', event => {
+    item.addEventListener('click', () => {
         localStorage.setItem('section', item.id);
         window.location.href = '../game';
-<<<<<<< HEAD
     });
 });
-=======
-    })
-})
->>>>>>> 780e58dc2406b8b8d3690a44099fa033720f32ee
+
+
+

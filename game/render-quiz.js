@@ -5,7 +5,6 @@ import { generateRandomChoices } from './generateRandomChoices.js';
 
 const user = getUser();
 
-
 //set when generateQuestion is called
 let currentQuestion;
 //set to the whichever button the user clicks
@@ -35,8 +34,12 @@ const audio = document.getElementById('randomSoundFromData');
 const nextButton = document.getElementById('next-button');
 const displayResult = document.getElementById('display-test');
 const answerButton = document.getElementById('answer-button');
+const testName = document.getElementById('testname');
 
 generateQuestion(quizQuestions, selectedSection.data);
+
+testName.textContent = selectedSection.title;
+
 
 soundButton.addEventListener('click', () => {
     /*change the name on html to something like randomSoundFromData instead of randomShengmu or make into a function that takes the users quiz choice and generates a sound from that assets file that corresponds.*/
@@ -53,10 +56,12 @@ soundButton.addEventListener('click', () => {
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
-    answerButton.disabled = true;
+    // answerButton.disabled = true;
 
 
 });
+
+document.getElementById('next-button').style.visibility = 'hidden';
 
 nextButton.addEventListener('click', () => {
     nextQuestion();
@@ -75,10 +80,12 @@ function populateQuestion(item) {
         const answerOption = document.createElement('input');
         label.textContent = item;
         answerOption.value = item;
+        answerOption.checked = true;
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         choiceText.appendChild(answerOption);
+
     });
 }
 
@@ -87,23 +94,30 @@ function checkAnswer() {
     const userChoice = formData.get('answers');
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
-    // change to make any of the three available arrays
+        // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
         displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
         user[selectedSection.id].incorrect++;
     }
-    saveUser(user);   
+    answerButton.disabled = true;
+    saveUser(user);
+    document.getElementById('next-button').style.visibility = 'visible';
+
     if (quizQuestions.length === 1) {
         user[selectedSection.id].completed = true;
         saveUser(user);
-        window.location = '../results';
-    } 
+        console.log(user);
+        window.location = '../results/';
+
+    }
 }
 
 function nextQuestion() {
-    console.log(currentQuestion)
+    console.log(currentQuestion);
     const questionIndex = quizQuestions.indexOf(currentQuestion);
+    document.getElementById('next-button').style.visibility = 'hidden';
+    answerButton.visibility = 'visible';
     quizQuestions.splice(questionIndex, 1);
 
     while (choiceText.firstChild) {
@@ -117,7 +131,6 @@ function nextQuestion() {
 
 // generating a random number by the length of the array
 function generateQuestion(arr, fullArray) {
-    
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
     const selectedAnswer = arr[index];
