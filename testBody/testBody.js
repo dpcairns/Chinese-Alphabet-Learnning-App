@@ -14,6 +14,7 @@ function renderLink(singleSection) {
     link.setAttribute('id', singleSection.id);
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
+        //FIX THIS SO BUTTON STILL WORKS BUT IS OBVIOUS TEST HAS ALREEADY BEEN TAKEN
         link.setAttribute('disabled', '');
     }
 

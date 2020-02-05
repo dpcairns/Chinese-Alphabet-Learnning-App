@@ -8,7 +8,7 @@ console.log(user)
 //set when generateQuestion is called
 let currentQuestion;
 //set to the whichever button the user clicks
-let selectedSection;
+export let selectedSection;
 const sectionId = localStorage.getItem('section');
 
 console.log(sectionId);
@@ -24,7 +24,7 @@ if (sectionId === 'shengMu') {
 const quizQuestions = selectedSection.data.slice();
 // let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
 // console.log(currentQuestion);
-
+console.log(user)
 //assigning at generateQuestion function
 let sound = null;
 
@@ -53,7 +53,7 @@ soundButton.addEventListener('click', () => {
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
-    answerButton.disabled = true;
+    //answerButton.disabled = true;
 
 
 });
@@ -128,7 +128,6 @@ function nextQuestion() {
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
-}
 
 
 // generates random choices for the test question
@@ -140,7 +139,6 @@ function nextQuestion() {
     let filteredChoices = arr.filter(item => {
         return item.id !== isNot;
     });
-
     // loop through the array and grab a random choice for each number of choices that don't match.
     for (let i = 0; i < numOfChoices; i++) {
         let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
@@ -153,10 +151,10 @@ function nextQuestion() {
             return item !== filteredChoices[choiceIndex];
         });
     }
-    return [
-        ...output.slice(0, insertIndex),
-        isNot,
-        ...output.slice(insertIndex)
-    ];
+        return [
+            ...output.slice(0, insertIndex),
+            isNot,
+            ...output.slice(insertIndex)
+        ];
+    }
 }
-

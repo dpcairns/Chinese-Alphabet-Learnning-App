@@ -1,6 +1,10 @@
 import { getUser } from '../utils/getuser.js';
+import { selectedSection } from '../game/render-quiz.js';
+import { saveUser } from '../utils/saveuser.js';
+import { resetTestSection } from '../utils/resetTestSection,js';
 
 const user = getUser();
+const resetButton = document.getElementById('reset-button');
 
 
 // let yunMuCorrect = user.yunMu.correct;
@@ -39,3 +43,8 @@ const chart = new Chart(ctx, {
     // Configuration options go here
     options: {}
 });
+
+
+resetButton.addEventListener('click', () =>{
+    resetTestSection();
+})
