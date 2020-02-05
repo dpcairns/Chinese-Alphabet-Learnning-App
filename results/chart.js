@@ -1,21 +1,16 @@
+import { getUser } from '../utils/getuser.js';
 
-const YunMuData = {
-    name: 'Yun Mu',
-    correct: 10,
-    incorrect: 13
-};
+const user = getUser();
 
-const ShengMuData = {
-    name: 'Sheng Mu',
-    correct: 20,
-    incorrect: 5
-};
 
-const ZhengTiData = {
-    name: 'Zheng Ti',
-    correct: 5,
-    incorrect: 14
-};
+// let yunMuCorrect = user.yunMu.correct;
+// let yunMuIncorrect = user.yunMu.incorrect;
+// let shengMuCorrect = user.shengMu.correct;
+// let shengMuIncorrect = user.shengMu.incorrect;
+// let zhengTiMuCorrect = user.zhengTiMu.correct;
+// let zhengTiMuIncorrect = user.zhengTiMu.incorrect;
+
+console.log(user);
 
 //-------------------------------------------------//
 
@@ -32,12 +27,12 @@ const chart = new Chart(ctx, {
             label: 'Correct',
             backgroundColor: '#8FBFB6',
             borderColor: 'white',
-            data: [YunMuData.correct, ShengMuData.correct, ZhengTiData.correct]
+            data: [user.yunMu.correct, user.shengMu.correct, user.zhengTi.correct]
         }, {
             label: 'Incorrect',
             backgroundColor: '#F2133C',
             borderColor: 'white',
-            data: [YunMuData.incorrect, ShengMuData.incorrect, ZhengTiData.incorrect]
+            data: [user.yunMu.incorrect, user.shengMu.incorrect, user.zhengTi.incorrect]
         }]
     },
 
