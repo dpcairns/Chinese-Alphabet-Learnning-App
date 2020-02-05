@@ -35,8 +35,12 @@ const audio = document.getElementById('randomSoundFromData');
 const nextButton = document.getElementById('next-button');
 const displayResult = document.getElementById('display-test');
 const answerButton = document.getElementById('answer-button');
+const testName = document.getElementById('testname');
 
 generateQuestion(quizQuestions, selectedSection.data);
+
+testName.textContent = selectedSection.title;
+
 
 soundButton.addEventListener('click', () => {
     /*change the name on html to something like randomSoundFromData instead of randomShengmu or make into a function that takes the users quiz choice and generates a sound from that assets file that corresponds.*/
