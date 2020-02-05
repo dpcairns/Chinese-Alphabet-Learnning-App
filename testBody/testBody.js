@@ -36,3 +36,6 @@ document.querySelectorAll('.singleSection').forEach(item => {
         window.location.href = '../game';
     });
 });
+
+
+
