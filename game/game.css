@@ -3,21 +3,37 @@
     text-align: center;
 }
 
-#answer-button, #sound-button {
+#testpage {
+    margin-top: 150px;
+    padding-top: 15px;
+    border: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 375px;
+}
+
+button {
     background-color: transparent;
     color: teal;
     margin-top: 30px;
     border-radius: 1rem;
+    width: 150px;
+    height: 50px;
     border: 1px solid teal;
     text-transform: uppercase;
-    font-size: 48px;
-    
 }
-#answer-button:hover {
+
+
+button:hover {
     cursor: pointer;
     background-color: rgb(142, 213, 213);
     color: white;
-    font-size: 48px;
+   
+}
+
+#display-test {
+    margin-top: 50px;
 }
 
 input {
@@ -37,4 +53,12 @@ h1 {
 body {
     background-image: url('../assets/imgs/background.png');
     background-size: cover;
+}
+
+#next {
+    margin-top: 30px;
+}
+
+button:disabled {
+   display: none;
 }

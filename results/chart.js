@@ -2,16 +2,6 @@ import { getUser } from '../utils/getuser.js';
 
 const user = getUser();
 
-
-// let yunMuCorrect = user.yunMu.correct;
-// let yunMuIncorrect = user.yunMu.incorrect;
-// let shengMuCorrect = user.shengMu.correct;
-// let shengMuIncorrect = user.shengMu.incorrect;
-// let zhengTiMuCorrect = user.zhengTiMu.correct;
-// let zhengTiMuIncorrect = user.zhengTiMu.incorrect;
-
-console.log(user);
-
 //-------------------------------------------------//
 
 const ctx = document.getElementById('results-chart').getContext('2d');
