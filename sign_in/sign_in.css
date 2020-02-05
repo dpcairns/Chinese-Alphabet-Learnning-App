@@ -3,16 +3,36 @@
     box-sizing - border-box;
 }
 
+body {
+    background-image: url('../assets/imgs/model-car-bg.jpg');
+    background-size: cover;
+
+}
+
 
 #landing {
     padding: 50px;
     text-align: center;
+    border: .5px solid black;
+    width: 66%;
+    margin: 20px auto 0 auto;
     
 }
 
 h1 {
     margin-bottom: 50px;
-    font-size: 42px;
+    font-size: 64px;
+    color: black;
+    letter-spacing: 50px;
+    font-weight: bold;
+    font-family: Libre, serif;
+}
+
+h2 {
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #F2133C;
+    margin-bottom: 20px;
 }
 
 label {
@@ -21,7 +41,17 @@ label {
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px;
-    
+    background-color: transparent;
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    width: 150px;
+    height: 50px;
+    border: 1px solid teal;
+    text-transform: uppercase;
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(142, 213, 213);
+    color: white;
 }

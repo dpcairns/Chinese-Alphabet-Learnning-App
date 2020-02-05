@@ -1,6 +1,19 @@
+* {
+    margin: 0px;
+    text-align: center;
 
+}
+
+h1 {
+    font-size: 42px;
+}
 
 #chart-div {
     border: 2px solid rgb(167, 124, 228);
     margin: 50px;
+}
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
 }
