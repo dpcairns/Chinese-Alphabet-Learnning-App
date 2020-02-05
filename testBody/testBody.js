@@ -32,7 +32,7 @@ for (let i = 0; i < alphabetData.length; i++){
 //does this need to be all
 document.querySelectorAll('.singleSection').forEach(item => {
     item.addEventListener('click', event => {
-      localStorage.setItem('section', item.id);
-      window.location.href = '../game';
-    })
-  })
+        localStorage.setItem('section', item.id);
+        window.location.href = '../game';
+    });
+});
