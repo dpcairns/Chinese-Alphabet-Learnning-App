@@ -32,7 +32,7 @@ body {
 }
 
 .singleSection {
-    background-color: transparent;  
+    background-color: white;  
     color: teal;
     margin-top: 30px;
     border-radius: 1rem;
@@ -40,6 +40,7 @@ body {
     height: 50px;
     border: 1px solid teal;
     margin-left: 20px;
+    font-size: 22px;
     
 }
 

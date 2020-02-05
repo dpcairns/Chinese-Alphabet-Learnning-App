@@ -30,7 +30,7 @@ body {
 
 #learning {
     width: 55%;
-    margin: 20px auto 0 auto;
+    margin: 100px auto 150px auto;
 }
 
 .yunmu-button {   
@@ -79,4 +79,14 @@ body {
     cursor: pointer;
     background-color: rgb(142, 213, 213);
     color: white;
+}
+
+.hint {
+    margin-top: 10px;
+    opacity: .5;
+    font-size: 20px;
+}
+
+#zhengti-desc, #yunmu-desc {
+    margin-top: 50px;
 }
