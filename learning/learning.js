@@ -1,17 +1,20 @@
-import { alphabetArray, shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js';
+import {  shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 
-shengMuArray.forEach(shengMu => {
+
+//change forEach iterater name to item or something.
+shengMu.data.forEach(shengMu => {
 
     const shengMuSection = document.getElementById('shengMu-section');
     const shengMuSpan = document.createElement('span');
     const button = document.createElement('button');
     shengMuSection.appendChild(button);
     button.appendChild(shengMuSpan);
+    button.className = 'shengmu-button';
     shengMuSpan.textContent = shengMu.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/shengmu/' + shengMu.audio;
+        audio.src = shengMu.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);
@@ -20,18 +23,19 @@ shengMuArray.forEach(shengMu => {
 
 });
 
-yunMuArray.forEach(yunMu => {
+yunMu.data.forEach(yunMu => {
 
     const yunMuSection = document.getElementById('yunmu-section');
     const yunMuSpan = document.createElement('span');
     const button = document.createElement('button');
     yunMuSection.appendChild(button);
     button.appendChild(yunMuSpan);
+    button.className = 'yunmu-button';
     yunMuSpan.textContent = yunMu.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/yunmu/' + yunMu.audio;
+        audio.src = yunMu.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);
@@ -41,18 +45,19 @@ yunMuArray.forEach(yunMu => {
 });
 
 
-zhengTiArray.forEach(zhengTi => {
+zhengTi.data.forEach(zhengTi => {
 
     const zhengTiSection = document.getElementById('zhengTi-section');
     const zhengTiSpan = document.createElement('span');
     const button = document.createElement('button');
     zhengTiSection.appendChild(button);
     button.appendChild(zhengTiSpan);
+    button.className = 'zhengti-button';
     zhengTiSpan.textContent = zhengTi.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/zhengti/' + zhengTi.audio;
+        audio.src = zhengTi.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);

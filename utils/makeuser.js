@@ -5,14 +5,17 @@ export function makeUser(formData) {
         yunMu: {
             correct: 0,
             incorrect: 0,
+            completed: false
         },
         shengMu: {
             correct: 0,
             incorrect: 0,
+            completed: false
         },
         zhengTi: {
             correct: 0,
             incorrect: 0,
+            completed: false
         },
     };
     return user;

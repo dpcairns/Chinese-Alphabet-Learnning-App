@@ -1,6 +1,26 @@
+* {
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
 
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 64px;
+    color: black;
+    font-weight: bold;
+    font-family: Libre, serif;
+}
 
 #chart-div {
-    border: 2px solid rgb(167, 124, 228);
-    margin: 50px;
+    border: 2px solid #D98B8B;
+    margin: 150px auto 50px auto;
+    max-width: 1600px;
+    max-height: 2000px;
+}
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
 }
