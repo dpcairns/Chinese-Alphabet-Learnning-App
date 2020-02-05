@@ -1,0 +1,67 @@
+* {
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+input {
+    margin: 5px;
+    
+}
+
+label {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 64px;
+    color: black;
+    font-weight: bold;
+    font-family: Libre, serif;
+    margin-top: 250px;
+}
+
+/* style differently from nav bar */
+
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
+}
+
+.singleSection {
+    background-color: transparent;  
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    width: 250px;
+    height: 50px;
+    border: 1px solid teal;
+    margin-left: 20px;
+    
+}
+
+.singleSection:hover {
+    cursor: pointer;
+    background-color: #F2BDBD;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    width: 150px;
+    height: 250px;
+    border: 1px solid teal;
+    text-transform: uppercase;
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(142, 213, 213);
+    color: white;
+}
+

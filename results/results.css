@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
+}
+
+
+.container {
+    border: 2px solid black;
+    margin-top: 50px;
+
+}
+
+#chart-div {
+    border: 2px solid #D98B8B;
+    margin: 25px 10% 25px 10%;
+}
+
+#results {
+    margin-top: 50px;
+}
