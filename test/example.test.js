@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import example from '../src/example.js';
-import { generateRandomChoices } from '../game/generateRandomChoices.js';
+import { generateRandomChoices, filterDuplicates } from '../game/generateRandomChoices.js';
 import { filterChoices } from '../game/generateRandomChoices.js';
 
 const test = QUnit.test;
@@ -38,6 +38,20 @@ test('filterChoices', function(assert) {
         { id: 'm', name: 'm', audio: '../assets/shengmu/m.mp3' },
         { id: 'f', name: 'f', audio: '../assets/shengmu/f.mp3' }];
     const result = filterChoices(arr, isNot);
+
+    assert.deepEqual(result, expected);
+
+});
+
+test('filterDuplicates', function(assert) {
+    const filterChoices = [{ id: 'p', name: 'p', audio: '../assets/shengmu/p.mp3' },
+        { id: 'm', name: 'm', audio: '../assets/shengmu/m.mp3' },
+        { id: 'f', name: 'f', audio: '../assets/shengmu/f.mp3' }];
+
+    const choiceIndex = 0;
+    const expected = [{ id: 'm', name: 'm', audio: '../assets/shengmu/m.mp3' },
+        { id: 'f', name: 'f', audio: '../assets/shengmu/f.mp3' }];
+    const result = filterDuplicates(filterChoices,choiceIndex);
 
     assert.deepEqual(result, expected);
 

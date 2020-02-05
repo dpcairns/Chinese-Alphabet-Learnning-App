@@ -2,7 +2,6 @@ import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 import { generateRandomChoices } from './generateRandomChoices.js';
-
 const user = getUser();
 
 //set when generateQuestion is called
