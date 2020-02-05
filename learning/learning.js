@@ -7,12 +7,12 @@ shengMuArray.forEach(shengMu => {
     const button = document.createElement('button');
     shengMuSection.appendChild(button);
     button.appendChild(shengMuSpan);
-    button.className = "shengmu-button";
+    button.className = 'shengmu-button';
     shengMuSpan.textContent = shengMu.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/shengmu/' + shengMu.audio;
+        audio.src = shengMu.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);
@@ -28,12 +28,12 @@ yunMuArray.forEach(yunMu => {
     const button = document.createElement('button');
     yunMuSection.appendChild(button);
     button.appendChild(yunMuSpan);
-    button.className = "yunmu-button";
+    button.className = 'yunmu-button';
     yunMuSpan.textContent = yunMu.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/yunmu/' + yunMu.audio;
+        audio.src = yunMu.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);
@@ -50,12 +50,12 @@ zhengTiArray.forEach(zhengTi => {
     const button = document.createElement('button');
     zhengTiSection.appendChild(button);
     button.appendChild(zhengTiSpan);
-    button.className = "zhengti-button";
+    button.className = 'zhengti-button';
     zhengTiSpan.textContent = zhengTi.name;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
-        audio.src = '../assets/zhengti/' + zhengTi.audio;
+        audio.src = zhengTi.audio;
         audio.type = 'audio/mp3';
         audio.play();
         button.appendChild(audio);

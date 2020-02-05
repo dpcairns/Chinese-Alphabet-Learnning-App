@@ -1,0 +1,70 @@
+* {
+    margin: 0px;
+    text-align: center;
+}
+
+#sound-button {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+#answer-button {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+input {
+    margin: 5px;
+    
+}
+
+label {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 64px;
+    color: black;
+    font-weight: bold;
+    font-family: Libre, serif;
+}
+
+/* style differently from nav bar */
+a.test {
+    font-size: 32px;
+    text-decoration: none;
+    padding: 20px;
+    font-family: Libre, serif;
+}
+
+body {
+    background-image: url('../assets/imgs/background.png');
+    background-size: cover;
+}
+
+.singleSection {
+    border: .5px solid black;
+    border-radius: 3rem;
+    margin: 3px;
+    background-color: transparent;
+}
+/* 
+button {
+    background-color: transparent;
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    width: 150px;
+    height: 50px;
+    border: 1px solid teal;
+    text-transform: uppercase;
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(142, 213, 213);
+    color: white;
+} */
