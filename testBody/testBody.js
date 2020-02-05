@@ -7,6 +7,7 @@ function renderLink(singleSection){
     link.classList.add('singleSection');
     nav.appendChild(link);
     link.textContent = singleSection.title;
+    link.classList.add ('test');
     console.log(singleSection.title);
     link.href = '../game/?id=' + singleSection.id;
     console.log(singleSection.id);
