@@ -3,7 +3,24 @@ import { shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js'
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 /*after user makes selection, evaluate answer, remove current question from quiz questions. re-run same logic with remaining questions in array.*/
-let quizQuestions = yunMuArray.slice();
+
+let theArrayWeWant;
+const searchParam = new URLSearchParams(window.location.search);
+const sectionId = searchParam.get('id');
+
+console.log(sectionId);
+
+if (sectionId === 'shengMuSection') {
+    theArrayWeWant = shengMuArray;
+} else if (sectionId === 'yunMuSection') {
+    theArrayWeWant = yunMuArray;
+} else if (sectionId === 'zhengTiSection') {
+    theArrayWeWant = zhengTiArray;
+}
+
+
+
+let quizQuestions = theArrayWeWant.slice();
 let currentQuestion = generateQuestion(quizQuestions);
 const soundButton = document.getElementById('sound-button');
 const choiceText = document.getElementById('choices');
@@ -13,7 +30,7 @@ const user = getUser();
 soundButton.addEventListener('click', () => {
     /*change the name on html to something like randomSoundFromData instead of randomShengmu or make into a function that takes the users quiz choice and generates a sound from that assets file that corresponds.*/
     const audio = document.getElementById('randomSoundFromData');
-    audio.src = '../assets/yunmu/' + currentQuestion.audio;
+    audio.src = currentQuestion.audio;
     audio.type = 'audio/mp3';
     audio.play();
 });
