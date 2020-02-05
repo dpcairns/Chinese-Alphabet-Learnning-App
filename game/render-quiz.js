@@ -1,9 +1,10 @@
 import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
+import { generateRandomChoices } from './generateRandomChoices.js';
 
 const user = getUser();
-console.log(user)
+
 
 //set when generateQuestion is called
 let currentQuestion;
@@ -11,7 +12,6 @@ let currentQuestion;
 let selectedSection;
 const sectionId = localStorage.getItem('section');
 
-console.log(sectionId);
 
 if (sectionId === 'shengMu') {
     selectedSection = shengMu;
@@ -116,7 +116,7 @@ function nextQuestion() {
 }
 
 // generating a random number by the length of the array
- function generateQuestion(arr, fullArray) {
+function generateQuestion(arr, fullArray) {
     
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
@@ -125,38 +125,13 @@ function nextQuestion() {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
+    console.log(selectedAnswer.id, 'selectedAnswer.id');
+    console.log(fullArray, 'fullArray');
+    
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
 }
 
 
-// generates random choices for the test question
- function generateRandomChoices(arr, numOfChoices, isNot) {
-    //passing in the full now so answer will be there.
-    const output = [];
-    const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
-    //filtering out the correct answer
-    let filteredChoices = arr.filter(item => {
-        return item.id !== isNot;
-    });
-
-    // loop through the array and grab a random choice for each number of choices that don't match.
-    for (let i = 0; i < numOfChoices; i++) {
-        let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
-
-        // populate the empty array with .push for each choice needed
-        output.push(filteredChoices[choiceIndex].id);
-
-        // checking that the current array isn't duplicated        
-        filteredChoices = filteredChoices.filter(item => {
-            return item !== filteredChoices[choiceIndex];
-        });
-    }
-    return [
-        ...output.slice(0, insertIndex),
-        isNot,
-        ...output.slice(insertIndex)
-    ];
-}
 
