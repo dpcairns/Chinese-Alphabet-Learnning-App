@@ -3,20 +3,20 @@
     box-sizing - border-box;
 }
 
-body {
-    background-image: url('../assets/imgs/model-car-bg.jpg');
-    background-size: cover;
-
-}   
-
 #landing {
     padding: 50px;
     text-align: center;
     border: .5px solid black;
     width: 66%;
-    margin: 20px auto 0 auto;
-    
+    margin: 225px auto 0 auto;
+    position: relative;
 }
+
+body {
+    background-image: url('../assets/imgs/alpha-background.png');
+    background-size: cover;
+    
+}   
 
 h1 {
     margin-bottom: 50px;
@@ -39,6 +39,10 @@ label {
     font-size: 22px;
 }
 
+#welcome {
+    font-size: 24px;
+}
+
 button {
     background-color: transparent;
     color: teal;
@@ -53,4 +57,23 @@ button:hover {
     cursor: pointer;
     background-color: rgb(142, 213, 213);
     color: white;
+}
+
+input {
+border: 5px solid white; 
+-webkit-box-shadow: 
+  inset 0 0 8px  rgba(0,0,0,0.1),
+        0 0 16px rgba(0,0,0,0.1); 
+-moz-box-shadow: 
+  inset 0 0 8px  rgba(0,0,0,0.1),
+        0 0 16px rgba(0,0,0,0.1); 
+box-shadow: 
+  inset 0 0 8px  rgba(0,0,0,0.1),
+        0 0 16px rgba(0,0,0,0.1); 
+padding: 15px;
+background: rgba(255,255,255,0.5);
+margin-right: 100px;
+width: 250px;
+text-align: center;
+font-size: 24px;
 }
