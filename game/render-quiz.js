@@ -16,7 +16,7 @@ if (sectionId === 'shengMuSection') {
     theArrayWeWant = yunMuArray;
 } else if (sectionId === 'zhengTiSection') {
     theArrayWeWant = zhengTiArray;
-}
+} else window.location = '../testBody';
 
 
 let quizQuestions = theArrayWeWant.slice();
@@ -26,6 +26,7 @@ const choiceText = document.getElementById('choices');
 const choiceForm = document.getElementById('choice-form');
 // bring the user from local storage
 const user = getUser();
+console.log(user);
 soundButton.addEventListener('click', () => {
     /*change the name on html to something like randomSoundFromData instead of randomShengmu or make into a function that takes the users quiz choice and generates a sound from that assets file that corresponds.*/
     const audio = document.getElementById('randomSoundFromData');
@@ -62,13 +63,24 @@ choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
-    //let countArray = yunMuArray.slice();
     if (userChoice === currentQuestion.id) {
-    // change to make any of the three available arrays
-        user.yunMu.correct++;
-    } else {
-        user.yunMu.incorrect++;
-    }
+        if (sectionId === 'shengMuSection'){
+            user.shengMu.correct++;
+        }
+    } else user.shengMu.incorrect++;
+
+    if (userChoice === currentQuestion.id) {
+        if (sectionId === 'yunMuSection'){
+            user.yunMu.correct++;
+        }
+    } else user.yunMu.incorrect++;
+
+    if (userChoice === currentQuestion.id) {
+        if (sectionId === 'zhengTiSection'){
+            user.zhengTi.correct++;
+        }
+    } else user.zhengTi.incorrect++;
+
     const questionIndex = quizQuestions.indexOf(currentQuestion);
     quizQuestions.splice(questionIndex, 1);
     currentQuestion = generateQuestion(quizQuestions);

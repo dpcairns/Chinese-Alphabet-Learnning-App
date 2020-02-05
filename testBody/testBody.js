@@ -1,11 +1,11 @@
 import { threeSections } from '../data/alphabetData.js';
 
-function renderLink(singleSection){
+export function renderLink(singleSection){
     const nav = document.getElementById('nav');
     const link = document.createElement('a');
     console.log(link);
-    link.classList.add('singleSection');
     nav.appendChild(link);
+    link.classList.add('singleSection');
     link.textContent = singleSection.title;
     link.classList.add ('test');
     console.log(singleSection.title);
