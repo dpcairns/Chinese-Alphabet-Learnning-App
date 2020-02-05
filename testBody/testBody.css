@@ -28,7 +28,7 @@ a.test {
     font-size: 32px;
     text-decoration: none;
     padding: 20px;
-    font-family: Libre, serif;
+    font-family: 'Libre Franklin', serif;
 }
 
 body {
@@ -51,5 +51,21 @@ body {
 .singleSection:hover {
     cursor: pointer;
     background-color: #F2BDBD;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    color: teal;
+    margin-top: 30px;
+    border-radius: 1rem;
+    width: 150px;
+    height: 50px;
+    border: 1px solid teal;
+    text-transform: uppercase;
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(142, 213, 213);
     color: white;
 }
