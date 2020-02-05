@@ -32,6 +32,9 @@ const soundButton = document.getElementById('sound-button');
 const choiceText = document.getElementById('choices');
 const choiceForm = document.getElementById('choice-form');
 const audio = document.getElementById('randomSoundFromData');
+const nextButton = document.getElementById('next-button');
+const displayResult = document.getElementById('display-test');
+const answerButton = document.getElementById('answer-button');
 
 generateQuestion(quizQuestions, selectedSection.data);
 
@@ -50,6 +53,15 @@ soundButton.addEventListener('click', () => {
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
+    answerButton.disabled = true;
+
+
+});
+
+nextButton.addEventListener('click', () => {
+    nextQuestion();
+    displayResult.textContent = '';
+    answerButton.disabled = false;
 
 });
 
@@ -74,9 +86,11 @@ function checkAnswer() {
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
     if (userChoice === currentQuestion.id) {
+        displayResult.textContent = 'Good Job!';
     // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
+        displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
         user[selectedSection.id].incorrect++;
     }
     saveUser(user);   
@@ -84,10 +98,7 @@ function checkAnswer() {
         user[selectedSection.id].completed = true;
         saveUser(user);
         window.location = '../results';
-    } else {
-        nextQuestion();
-
-    }
+    } 
 }
 
 function nextQuestion() {
