@@ -9,29 +9,32 @@
     <link rel="stylesheet" href="../style.css">
     <title>Alpha</title>
 </head>
-<header>
-    <ul>
-        <li><a href="" class="active">Home</a></li>
-        <li><a href="../learning/">Learning</a></li>
-        <li><a href="../testBody/">Test</a></li>
-        <li><a href="../about_us">About</a></li>
-    </ul>
-</header>
+<div id="navigation">
+<nav>
+    
+    <a href="" class="active">Home</a>
+    <a href="../learning/">Learning</a>
+    <a href="../testBody/">Test</a>
+    <a href="../about_us">About</a>
+</nav>
 
+</div>
 <body>
     <div id="landing">
+        <div id="box">
         <h1>Alpha-Bet</h1>
         <h2>Learning a language should be fun.</h2>
         <form id="user-sign-up">
             <div id="welcome-container">
-                <label id="welcome">Create a user account:</label>
-                <input id="name" name="name" required>
+                <label id="welcome"></label>
+                <input id="name" name="name" required placeholder="Input your Name">
             </div>
             <div class="button-container">
                 <button>Sign Up</button>
             </div>
+        </form>
     </div>
-    </form>
+</div>
     </div>
 
     <script type="module" src="sign_in.js"></script>
