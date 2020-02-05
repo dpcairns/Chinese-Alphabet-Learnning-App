@@ -21,3 +21,7 @@ body {
     border: 2px solid #D98B8B;
     margin: 25px 10% 25px 10%;
 }
+
+#results {
+    margin-top: 50px;
+}
