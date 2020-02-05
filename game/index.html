@@ -18,21 +18,26 @@
 </nav>
 
 <body>
+    <div class="testname">
+        <h1 id="testname"></h1>
+    </div>
+
     <section id="testpage">
-        <button id="sound-button">What letter is this? 🔊
+        <button id="sound-button">Listen to the letter 🔊
             <audio id="randomSoundFromData"></audio>
         </button>
-    </section>
-    <form id="choice-form">
+        <form id="choice-form">
 
-        <div id="choices">
-        </div>
-        <div class="button-container">
-            <button id="answer-button">Choose</button>
-            <div id="display-test"></div>
-        </div>
-    </form> 
-    <button id="next-button">Next Question</button>    
+            <div id="choices">
+            </div>
+            <div class="button-container">
+                <button id="answer-button">Choose</button>
+                <div id="display-test"></div>
+            </div>
+        </form>
+        <div id="next"><button id="next-button">Next Question</button> </div>
+
+    </section>
     <script type="module" src="render-quiz.js"></script>
 </body>
 

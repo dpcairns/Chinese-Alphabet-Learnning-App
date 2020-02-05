@@ -6,16 +6,6 @@ import { resetTestSection } from '../utils/resetTestSection,js';
 const user = getUser();
 const resetButton = document.getElementById('reset-button');
 
-
-// let yunMuCorrect = user.yunMu.correct;
-// let yunMuIncorrect = user.yunMu.incorrect;
-// let shengMuCorrect = user.shengMu.correct;
-// let shengMuIncorrect = user.shengMu.incorrect;
-// let zhengTiMuCorrect = user.zhengTiMu.correct;
-// let zhengTiMuIncorrect = user.zhengTiMu.incorrect;
-
-console.log(user);
-
 //-------------------------------------------------//
 
 const ctx = document.getElementById('results-chart').getContext('2d');

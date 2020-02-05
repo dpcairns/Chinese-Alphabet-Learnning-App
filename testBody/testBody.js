@@ -16,6 +16,8 @@ function renderLink(singleSection) {
     if (user[singleSection.id].completed) {
         //FIX THIS SO BUTTON STILL WORKS BUT IS OBVIOUS TEST HAS ALREEADY BEEN TAKEN
         link.setAttribute('disabled', '');
+        link.textContent = 'test completed';
+        link.style.backgroundColor = '#F2133C';
     }
 
     return link;
@@ -30,8 +32,11 @@ for (let i = 0; i < alphabetData.length; i++) {
 
 //does this need to be all
 document.querySelectorAll('.singleSection').forEach(item => {
-    item.addEventListener('click', event => {
+    item.addEventListener('click', () => {
         localStorage.setItem('section', item.id);
         window.location.href = '../game';
-    })
-})
+    });
+});
+
+
+
