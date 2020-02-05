@@ -19,7 +19,6 @@ if (sectionId === 'shengMuSection') {
 }
 
 
-
 let quizQuestions = theArrayWeWant.slice();
 let currentQuestion = generateQuestion(quizQuestions);
 const soundButton = document.getElementById('sound-button');
@@ -65,12 +64,13 @@ choiceForm.addEventListener('submit', (e) => {
     const userChoice = formData.get('answers');
     //let countArray = yunMuArray.slice();
     if (userChoice === currentQuestion.id) {
+    // change to make any of the three available arrays
         user.yunMu.correct++;
     } else {
         user.yunMu.incorrect++;
     }
-    const questionInd = quizQuestions.indexOf(currentQuestion);
-    quizQuestions.splice(questionInd, 1);
+    const questionIndex = quizQuestions.indexOf(currentQuestion);
+    quizQuestions.splice(questionIndex, 1);
     currentQuestion = generateQuestion(quizQuestions);
     choices = generateChoices(currentQuestion.wrongAnswers, generateInsertIndex(), currentQuestion.id);
     while (choiceText.firstChild) {
