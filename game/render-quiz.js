@@ -3,7 +3,7 @@ import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 
 const user = getUser();
-console.log(user)
+console.log(user);
 
 //set when generateQuestion is called
 let currentQuestion;
@@ -53,10 +53,12 @@ soundButton.addEventListener('click', () => {
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
-    answerButton.disabled = true;
+    // answerButton.disabled = true;
 
 
 });
+
+document.getElementById('next-button').style.visibility = 'hidden';
 
 nextButton.addEventListener('click', () => {
     nextQuestion();
@@ -75,10 +77,12 @@ function populateQuestion(item) {
         const answerOption = document.createElement('input');
         label.textContent = item;
         answerOption.value = item;
+        answerOption.checked = true;
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         choiceText.appendChild(answerOption);
+
     });
 }
 
@@ -87,23 +91,30 @@ function checkAnswer() {
     const userChoice = formData.get('answers');
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
-    // change to make any of the three available arrays
+        // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
         displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
         user[selectedSection.id].incorrect++;
     }
-    saveUser(user);   
+    answerButton.disabled = true;
+    saveUser(user);
+    document.getElementById('next-button').style.visibility = 'visible';
+
     if (quizQuestions.length === 1) {
         user[selectedSection.id].completed = true;
         saveUser(user);
-        window.location = '../results';
-    } 
+        console.log(user);
+        window.location = '../results/';
+
+    }
 }
 
 function nextQuestion() {
-    console.log(currentQuestion)
+    console.log(currentQuestion);
     const questionIndex = quizQuestions.indexOf(currentQuestion);
+    document.getElementById('next-button').style.visibility = 'hidden';
+    answerButton.visibility = 'visible';
     quizQuestions.splice(questionIndex, 1);
 
     while (choiceText.firstChild) {
@@ -116,8 +127,8 @@ function nextQuestion() {
 }
 
 // generating a random number by the length of the array
- function generateQuestion(arr, fullArray) {
-    
+function generateQuestion(arr, fullArray) {
+
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
     const selectedAnswer = arr[index];
@@ -132,7 +143,7 @@ function nextQuestion() {
 
 
 // generates random choices for the test question
- function generateRandomChoices(arr, numOfChoices, isNot) {
+function generateRandomChoices(arr, numOfChoices, isNot) {
     //passing in the full now so answer will be there.
     const output = [];
     const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
