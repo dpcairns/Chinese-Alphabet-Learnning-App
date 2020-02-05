@@ -3,7 +3,9 @@ import { shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js'
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 /*after user makes selection, evaluate answer, remove current question from quiz questions. re-run same logic with remaining questions in array.*/
-
+const ifWrongMessage = document.getElementById('if-wrong');
+const chooseButton = document.getElementById('answer-button');
+const nextButton = document.getElementById('next-button');
 let theArrayWeWant;
 const searchParam = new URLSearchParams(window.location.search);
 const sectionId = searchParam.get('id');
@@ -66,21 +68,31 @@ choiceForm.addEventListener('submit', (e) => {
     if (userChoice === currentQuestion.id) {
         if (sectionId === 'shengMuSection'){
             user.shengMu.correct++;
+            ifWrongMessage.textContent = 'You got it!';
         }
-    } else user.shengMu.incorrect++;
-
+    } else {
+        user.shengMu.incorrect++;
+        ifWrongMessage.textContent = 'Oooooooops, The correct answer is ' + currentQuestion.id + '!';
+    }
+    console.log(ifWrongMessage);
     if (userChoice === currentQuestion.id) {
         if (sectionId === 'yunMuSection'){
             user.yunMu.correct++;
         }
     } else user.yunMu.incorrect++;
-
+    
     if (userChoice === currentQuestion.id) {
         if (sectionId === 'zhengTiSection'){
             user.zhengTi.correct++;
         }
     } else user.zhengTi.incorrect++;
+    chooseButton.disabled = true;
 
+});
+nextButton.addEventListener('click', (e) =>{
+    e.preventDefault();
+    chooseButton.disabled = false;
+    ifWrongMessage.textContent = '';
     const questionIndex = quizQuestions.indexOf(currentQuestion);
     quizQuestions.splice(questionIndex, 1);
     currentQuestion = generateQuestion(quizQuestions);
@@ -103,4 +115,6 @@ choiceForm.addEventListener('submit', (e) => {
     if (quizQuestions.length === 0) {
         window.location = '../results';
     }
+
+
 });
