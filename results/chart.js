@@ -23,20 +23,20 @@ const ctx = document.getElementById('results-chart').getContext('2d');
 const chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
-    
+
     fillOpacity: .3,
     // The data for our dataset
     data: {
         labels: ['Yun Mu', 'Sheng Mu', 'Zheng Ti'],
         datasets: [{
             label: 'Correct',
-            backgroundColor: 'rgb(179, 255, 198)',
-            borderColor: 'rgb(255, 255, 255)',
+            backgroundColor: '#8FBFB6',
+            borderColor: 'white',
             data: [YunMuData.correct, ShengMuData.correct, ZhengTiData.correct]
         }, {
             label: 'Incorrect',
-            backgroundColor: 'rgb(255, 102, 102)',
-            borderColor: 'rgb(255, 255, 255)',
+            backgroundColor: '#F2133C',
+            borderColor: 'white',
             data: [YunMuData.incorrect, ShengMuData.incorrect, ZhengTiData.incorrect]
         }]
     },
