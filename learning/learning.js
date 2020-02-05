@@ -1,6 +1,8 @@
-import { shengMuArray, yunMuArray, zhengTiArray } from '../data/alphabetData.js';
+import {  shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 
-shengMuArray.forEach(shengMu => {
+
+//change forEach iterater name to item or something.
+shengMu.data.forEach(shengMu => {
 
     const shengMuSection = document.getElementById('shengMu-section');
     const shengMuSpan = document.createElement('span');
@@ -21,7 +23,7 @@ shengMuArray.forEach(shengMu => {
 
 });
 
-yunMuArray.forEach(yunMu => {
+yunMu.data.forEach(yunMu => {
 
     const yunMuSection = document.getElementById('yunmu-section');
     const yunMuSpan = document.createElement('span');
@@ -43,7 +45,7 @@ yunMuArray.forEach(yunMu => {
 });
 
 
-zhengTiArray.forEach(zhengTi => {
+zhengTi.data.forEach(zhengTi => {
 
     const zhengTiSection = document.getElementById('zhengTi-section');
     const zhengTiSpan = document.createElement('span');
