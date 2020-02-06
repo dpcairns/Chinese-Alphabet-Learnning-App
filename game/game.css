@@ -86,6 +86,25 @@ h1#testname {
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
     width: 50%;
     border-radius: 1.4rem;
-    
-    
+}
+
+#right-wrong-box {
+    position: relative;
+    width: 50%;
+    height: 392px;
+    border: 2px solid lightgreen;
+    background-color: rgb(46, 106, 139);
+    margin: 10px auto;
+    opacity: .5;
+    bottom: 405px;
+}
+
+.right-answer {
+    border: 2px solid lightgreen;
+    background-color: seagreen;
+}
+
+.wrong-answer {
+    border: 2px solid rgb(184, 41, 41);
+    background-color: seagreen;
 }
