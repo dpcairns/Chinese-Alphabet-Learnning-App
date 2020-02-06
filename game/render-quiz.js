@@ -5,7 +5,7 @@ import { filterDuplicates, filterChoices } from './generateRandomChoices.js';
 
 
 const user = getUser();
-console.log(user);
+// console.log(user);
 
 //set when generateQuestion is called
 let currentQuestion;
@@ -13,7 +13,7 @@ let currentQuestion;
 let selectedSection;
 const sectionId = localStorage.getItem('section');
 
-console.log(sectionId);
+// console.log(sectionId);
 
 if (sectionId === 'shengMu') {
     selectedSection = shengMu;
@@ -24,6 +24,7 @@ if (sectionId === 'shengMu') {
 }
 
 const quizQuestions = selectedSection.data.slice();
+document.getElementById('next-button').style.visibility = 'hidden';
 // let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
 // console.log(currentQuestion);
 
@@ -101,10 +102,11 @@ function checkAnswer() {
         saveUser(user);
         window.location = '../results';
     } 
+    document.getElementById('next-button').style.visibility = 'visible';
 }
 
 function nextQuestion() {
-    console.log(currentQuestion)
+    
     const questionIndex = quizQuestions.indexOf(currentQuestion);
 
     answerButton.visibility = 'visible';
@@ -131,8 +133,8 @@ function generateQuestion(arr, fullArray) {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
-    console.log(selectedAnswer.id, 'selectedAnswer.id');
-    console.log(fullArray, 'fullArray');
+    // console.log(selectedAnswer.id, 'selectedAnswer.id');
+    // console.log(fullArray, 'fullArray');
     
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
@@ -148,7 +150,7 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
     //filtering out the correct answer
     let filteredChoices = filterChoices(arr, isNot);
 
-    console.log(filteredChoices);
+    // console.log(filteredChoices);
 
     // loop through the array and grab a random choice for each number of choices that don't match.
     for (let i = 0; i < numOfChoices; i++) {
