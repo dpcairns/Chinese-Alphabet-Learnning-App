@@ -24,6 +24,11 @@ button {
     text-transform: uppercase;
 }
 
+#sound-button {
+    background-color: white;
+    width: 50%;
+}
+
 
 button:hover {
     cursor: pointer;
@@ -41,12 +46,19 @@ button:hover {
 input {
     margin-top: 50px;
     margin-bottom: 50px;
-    
+    display: none;
+    margin-top: 20px;    
+}
+
+label:checked {
+    border: 2px solid red;
 }
 
 label {
     font-size: 48px;
     margin-left: 20px;
+    border: 2px solid white;
+    border-radius: .5rem;
 }
 h1 {
   text-align: center;
