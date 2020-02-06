@@ -1,8 +1,9 @@
 body{
   margin: 0;
   padding: 0;
-  background: #34495e;
+  
 }
+
 .slidershow{
   width: 80%;
   height: 55%;
@@ -30,9 +31,15 @@ body{
   margin-right: 6px;
   cursor: pointer;
   transition: 0.4s;
+  background: #fff;
 }
 .bar:hover{
-  background: #fff;
+  background: #F2BDBD;
+}
+
+.bar:active {
+  background-color: red;
+  color: red;
 }
 
 input[name="r"]{
