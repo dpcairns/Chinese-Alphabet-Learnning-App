@@ -87,13 +87,16 @@ function populateQuestion(item) {
 
     choices.forEach(item => {
         const label = document.createElement('label');
+        const span = document.createElement('span');
         const answerOption = document.createElement('input');
-        label.textContent = item;
+        span.textContent = item;
+        label.className = 'cool-label';
         answerOption.value = item;
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         label.appendChild(answerOption);
+        label.appendChild(span);
     });
 }
 
