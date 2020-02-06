@@ -24,6 +24,7 @@ if (sectionId === 'shengMu') {
 }
 
 const quizQuestions = selectedSection.data.slice();
+document.getElementById('next-button').style.visibility = 'hidden';
 // let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
 // console.log(currentQuestion);
 
@@ -101,6 +102,7 @@ function checkAnswer() {
         saveUser(user);
         window.location = '../results';
     } 
+    document.getElementById('next-button').style.visibility = 'visible';
 }
 
 function nextQuestion() {
