@@ -38,7 +38,7 @@ nav a:hover {
 
 
 h1 {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Playfair Display'
 
 }
 
@@ -52,10 +52,12 @@ h1 {
 #giant-button {
   margin: 20px;
   width: 80%;
-  height: 700px;
+  height: 800px;
   font-size: 150px;
   padding: 25px;
   border: 5px solid lightblue;
+  font-family: 'Playfair Display'
+  
 }
 
 #giant-button:hover {
