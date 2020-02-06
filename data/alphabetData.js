@@ -20,7 +20,7 @@ export const shengMu = {
         { id: 'ch', name: 'ch', audio: '../assets/shengmu/ch.mp3', description: 'like the ch in ch in but with the tonge curled upwards.' },
         { id: 'sh', name: 'sh', audio: '../assets/shengmu/sh.mp3', description: 'like the sh in shoe, but with the tongue curled upwards; very similar to marsh in American English' },
         { id: 'r', name: 'r', audio: '../assets/shengmu/r.mp3', description: 'No equivalent in English.  Curl the tonge up, and make an r sound. ' },
-        { id: 'z', name: 'z', audio: '../assets/shengmu/z.mp3', description: 'a dz sound.  No English words start with this sounds, but it is like the end of many english words, e.g. kids'},
+        { id: 'z', name: 'z', audio: '../assets/shengmu/z.mp3', description: 'a dz sound.  No English words start with this sounds, but it is like the end of many english words, e.g. kids' },
         { id: 'c', name: 'c', audio: '../assets/shengmu/c.mp3', description: 'a ts sound, like cats, or hats' },
         { id: 's', name: 's', audio: '../assets/shengmu/s.mp3', description: 'like sun in english' },
         { id: 'y', name: 'y', audio: '../assets/shengmu/y.mp3', description: 'like yellow in english' },
