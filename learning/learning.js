@@ -11,6 +11,8 @@ shengMu.data.forEach(shengMu => {
     button.appendChild(shengMuSpan);
     button.className = 'shengmu-button';
     shengMuSpan.textContent = shengMu.name;
+    shengMuSpan.title = shengMu.description ;
+
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
