@@ -18,9 +18,7 @@ function renderLink(singleSection) {
     link.setAttribute('id', singleSection.id);
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
-        //FIX THIS SO BUTTON STILL WORKS BUT IS OBVIOUS TEST HAS ALREEADY BEEN TAKEN
-        //retry test function cannot clear out previously taken tests if they are not rest at completeion. only looks at the most recent test. comment out diabled to fix this or write a function that resets all tests.
-        //link.setAttribute('disabled', '');
+        //retry test function cannot clear out previously taken tests if they are not rest at completion. only looks at the most recent test.         
         link.textContent = 'test completed';
         link.style.backgroundColor = '#F2133C';
     }
@@ -31,7 +29,6 @@ function renderLink(singleSection) {
 for (let i = 0; i < alphabetData.length; i++) {
     //singlesection is being assigned to the full object of shengmu, yunmu,zhengti.
     const singleSection = alphabetData[i];
-    console.log(singleSection);
     renderLink(singleSection);
 }
 
