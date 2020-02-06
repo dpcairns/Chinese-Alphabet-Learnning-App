@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="learning.css">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="../testbody/testbody.css">
+    <link rel="stylesheet" href="../learning/learning.css">
     <link rel="stylesheet" href="../style.css">
-    <title>Learning is terrific</title>
-</head>
-<nav>
+  </head>
+  <nav>
     <a href="../sign_in/">Home</a>
     <a href="../learning/" class="active">Learning</a>
-    <a href="../testBody/">Test</a>
     <a href="../about_us/">About</a>
 </nav>
-<body>
-    
-    <div id="learning">
-        <div id="sheng-desc">
+  <body>
+    <div id="panda">
+      <img src="../assets/imgs/cute panda.png">
+    </div>
+    <div class="slidershow middle">
+
+      <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <div class="slide s1">
+          <div id="sheng-desc">
             <h1 title="the initial consonant (of a Chinese syllable)">ShengMu Letters</h1>
             <p class="hint">Sheng Mu is the initial consonant of a Chinese syllable.</p>
             <section id="shengMu-section">
@@ -26,26 +32,40 @@
             </section>
             
         </div>
-        <hr>
-        <div id="yunmu-desc">
+        </div>
+        <div class="slide">
+          <div id="yunmu-desc">
             <h1 title="vowel portion of the phonetic alphabet, is combined with Sheng Mu to make up a complete sound.">YunMu Letters</h1>
             <p class="hint">Yun Mu is the vowel portion of the phonetic alphabet. It is combined with Sheng Mu to make up a complete sound.</p>
             <section id="yunmu-section">
                 <audio id="audio"></audio>
             </section>
+          </div>
         </div>
-        <hr>
-        <div id="zhengti-desc">
+        <div class="slide">
+          <div id="zhengti-desc">
             <h1 title="whole syllable">ZhengTi Letters</h1>
             <p class="hint">Zheng Ti is the whole syllable.</p>
             <section id="zhengTi-section">
-                <audio id="audio"></audio>
-            </section>
+            <audio id="audio"></audio>
+        </section>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+       
+      </div>
     </div>
+  </div>
+    
+  
+  <div id="container">
+  <div id="test-nav"></div>
 </div>
-
-    <script type="module" src="learning.js"></script>
-</body>
-
-
+    <script type="module" src="../testBody/testBody.js"></script>
+    <script type="module" src="../learning/learning.js"></script>
+  </body>
 </html>
