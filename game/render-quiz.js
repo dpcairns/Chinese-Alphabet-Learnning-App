@@ -38,6 +38,7 @@ const audio = document.getElementById('randomSoundFromData');
 const nextButton = document.getElementById('next-button');
 const displayResult = document.getElementById('display-test');
 const answerButton = document.getElementById('answer-button');
+const testName = document.getElementById('testname');
 
 generateQuestion(quizQuestions, selectedSection.data);
 
@@ -48,6 +49,8 @@ soundButton.addEventListener('click', () => {
     audio.load();
     audio.play();
 });
+
+testName.textContent = selectedSection.title;
 
 //populateQuestion(currentQuestion);
 
