@@ -25,8 +25,9 @@ button {
 }
 
 #sound-button {
-    background-color: white;
+    background-color: #8FBFB6;
     width: 50%;
+    margin-bottom: 50px;
 }
 
 
@@ -45,21 +46,15 @@ button:hover {
 
 input {
     margin-top: 50px;
-    margin-bottom: 50px;
-    display: none;
+    margin-bottom: 20px;
     margin-top: 20px;    
-}
-
-label:checked {
-    border: 2px solid red;
 }
 
 label {
     font-size: 48px;
     margin-left: 20px;
-    border: 2px solid white;
-    border-radius: .5rem;
 }
+
 h1 {
   text-align: center;
 }
