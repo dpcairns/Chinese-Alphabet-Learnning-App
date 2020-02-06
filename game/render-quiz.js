@@ -126,7 +126,7 @@ function nextQuestion() {
 
     quizQuestions.splice(questionIndex, 1);
     document.getElementById('next-button').style.visibility = 'hidden';
-
+//making sure the new choices don't populate on the same line
     while (choiceText.firstChild) {
         choiceText.removeChild(choiceText.firstChild);
     }

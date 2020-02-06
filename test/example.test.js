@@ -21,7 +21,9 @@ test('generateRandomChoices', function(assert) {
     ];
     
     const result = generateRandomChoices(arr, numOfChoices, isNot);
+
     assert.equal(expected.length, result.length);
+    
     const includes = result.includes('b') || result.includes('p') || result.includes('m') || result.includes('f');
    
     assert.equal(true, includes);
