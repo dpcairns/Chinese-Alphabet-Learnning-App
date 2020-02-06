@@ -24,6 +24,12 @@ button {
     text-transform: uppercase;
 }
 
+#sound-button {
+    background-color: #8FBFB6;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
 
 button:hover {
     cursor: pointer;
@@ -40,14 +46,15 @@ button:hover {
 
 input {
     margin-top: 50px;
-    margin-bottom: 50px;
-    
+    margin-bottom: 20px;
+    margin-top: 20px;    
 }
 
 label {
     font-size: 48px;
     margin-left: 20px;
 }
+
 h1 {
   text-align: center;
 }
