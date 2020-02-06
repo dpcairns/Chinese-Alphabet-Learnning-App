@@ -2,7 +2,7 @@ export const shengMu = {
     id: 'shengMu',
     title: 'Sheng Mu Test',
     data: [
-        { id: 'b', name: 'b', audio: '../assets/shengmu/b.mp3', description: 'like bay in english' },
+        { id: 'b', name: 'b', audio: '../assets/shengmu/b.mp3' },
         { id: 'p', name: 'p', audio: '../assets/shengmu/p.mp3' },
         { id: 'm', name: 'm', audio: '../assets/shengmu/m.mp3' },
         { id: 'f', name: 'f', audio: '../assets/shengmu/f.mp3' },

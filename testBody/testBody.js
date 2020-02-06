@@ -1,5 +1,9 @@
 import { alphabetData } from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
+import { resetTestSection } from '../results/results.js';
+
+const section = localStorage.getItem('section');
+
 
 const user = getUser();
 //changed to localstorage instead of URLsearchParams.
@@ -15,7 +19,8 @@ function renderLink(singleSection) {
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
         //FIX THIS SO BUTTON STILL WORKS BUT IS OBVIOUS TEST HAS ALREEADY BEEN TAKEN
-        link.setAttribute('disabled', '');
+        //retry test function cannot clear out previously taken tests if they are not rest at completeion. only looks at the most recent test. comment out diabled to fix this or write a function that resets all tests.
+        //link.setAttribute('disabled', '');
         link.textContent = 'test completed';
         link.style.backgroundColor = '#F2133C';
     }
@@ -34,6 +39,7 @@ for (let i = 0; i < alphabetData.length; i++) {
 document.querySelectorAll('.singleSection').forEach(item => {
     item.addEventListener('click', () => {
         localStorage.setItem('section', item.id);
+        resetTestSection(section);
         window.location.href = '../game';
     });
 });
