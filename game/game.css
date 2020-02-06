@@ -3,6 +3,37 @@
     text-align: center;
 }
 
+input {
+    display: none;
+    width: 40px;
+    padding: 10px;
+}
+
+span {
+    margin: 0 20px;
+}
+
+input, label:hover {
+    cursor: pointer;
+    opacity: .5;    
+    border-radius: 1rem;
+}
+
+input:checked + span {
+    background-color: rgb(219, 113, 129);
+    border-radius: 1rem;
+    border: 2px solid rgb(152, 193, 152);
+    padding: 10px;
+}
+
+
+label:active {   
+    color: rgb(25, 116, 114);
+}
+
+
+
+
 #testpage {
     position: relative;
     z-index: 2;
@@ -111,3 +142,4 @@ h1#testname {
     border: 2px solid rgb(184, 41, 41);
     background-color:  rgb(179, 21, 21);
 }
+
