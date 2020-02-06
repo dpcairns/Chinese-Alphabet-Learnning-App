@@ -10,7 +10,7 @@ const user = getUser();
 //set when generateQuestion is called
 let currentQuestion;
 //set to the whichever button the user clicks
-let selectedSection;
+export let selectedSection;
 const sectionId = localStorage.getItem('section');
 
 // console.log(sectionId);
@@ -27,7 +27,7 @@ const quizQuestions = selectedSection.data.slice();
 document.getElementById('next-button').style.visibility = 'hidden';
 // let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
 // console.log(currentQuestion);
-
+console.log(user)
 //assigning at generateQuestion function
 let sound = null;
 
@@ -149,11 +149,9 @@ function generateQuestion(arr, fullArray) {
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
-}
-
 
 // generates random choices for the test question
-export function generateRandomChoices(arr, numOfChoices, isNot) {
+ function generateRandomChoices(arr, numOfChoices, isNot) {
     //passing in the full now so answer will be there.
     const output = [];
     const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
@@ -179,3 +177,4 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
     ];
 }
 
+}

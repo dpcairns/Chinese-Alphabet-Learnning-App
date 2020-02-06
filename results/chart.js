@@ -1,5 +1,6 @@
 import { getUser } from '../utils/getuser.js';
 
+
 const user = getUser();
 
 //-------------------------------------------------//
@@ -29,3 +30,5 @@ const chart = new Chart(ctx, {
     // Configuration options go here
     options: {}
 });
+
+
