@@ -88,6 +88,7 @@ function populateQuestion(item) {
 function checkAnswer() {
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
+    //let countArray = yunMuArray.slice();
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
     // change to make any of the three available arrays
