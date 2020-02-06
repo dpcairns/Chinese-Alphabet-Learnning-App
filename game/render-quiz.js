@@ -81,7 +81,7 @@ function populateQuestion(item) {
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
-        choiceText.appendChild(answerOption);
+        label.appendChild(answerOption);
     });
 }
 
