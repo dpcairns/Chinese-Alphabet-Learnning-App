@@ -4,6 +4,8 @@
 }
 
 #testpage {
+    position: relative;
+    z-index: 2;
     margin-top: 125px;
     padding-top: 15px;
     border: 1px solid black;
@@ -86,6 +88,26 @@ h1#testname {
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
     width: 50%;
     border-radius: 1.4rem;
-    
-    
+}
+
+#right-wrong-box {
+    position: relative;
+    width: 50%;
+    height: 387px;
+    /* border: 1px solid rgb(0, 0, 0); */
+    /* background-color: rgb(46, 106, 139); */
+    margin: 10px auto;
+    opacity: .5;
+    bottom: 402px;
+    z-index: 1;
+}
+
+.right-answer {
+    border: 2px solid lightgreen;
+    background-color: seagreen;
+}
+
+.wrong-answer {
+    border: 2px solid rgb(184, 41, 41);
+    background-color:  rgb(179, 21, 21);
 }

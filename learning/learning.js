@@ -12,7 +12,8 @@ shengMu.data.forEach(shengMu => {
     button.appendChild(shengMuSpan);
     button.className = 'shengmu-button';
     shengMuSpan.textContent = shengMu.name;
-    
+    shengMuSpan.title = shengMu.description;
+
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
@@ -33,8 +34,9 @@ yunMu.data.forEach(yunMu => {
     yunMuSection.appendChild(button);
     button.appendChild(yunMuSpan);
     button.className = 'yunmu-button';
-    yunMuSpan.textContent = yunMu.name; 
-    //button.setAttribute('title', shengMu.description);
+    yunMuSpan.textContent = yunMu.name;
+    yunMuSpan.title = yunMu.description;
+
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');
         audio.src = yunMu.audio;
@@ -56,6 +58,7 @@ zhengTi.data.forEach(zhengTi => {
     button.appendChild(zhengTiSpan);
     button.className = 'zhengti-button';
     zhengTiSpan.textContent = zhengTi.name;
+    zhengTiSpan.title = zhengTi.description;
 
     button.addEventListener('click', () => {
         const audio = document.getElementById('audio');

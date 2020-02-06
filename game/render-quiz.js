@@ -51,13 +51,21 @@ soundButton.addEventListener('click', () => {
 
 //populateQuestion(currentQuestion);
 
-
+const rightOrWrongAlert = document.getElementById('right-wrong-box');
 
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
     answerButton.disabled = true;
 
+
+    const formData = new FormData(choiceForm);
+    const userChoice = formData.get('answers');
+    if (userChoice === currentQuestion.id) {
+        rightOrWrongAlert.className = 'right-answer';
+    } else {
+        rightOrWrongAlert.className = 'wrong-answer';
+    }
 
 });
 
@@ -66,6 +74,7 @@ nextButton.addEventListener('click', () => {
     displayResult.textContent = '';
     answerButton.disabled = false;
 
+    rightOrWrongAlert.className = '';
 });
 
 //populateQuestion is called in generateQuestion.
@@ -88,6 +97,7 @@ function populateQuestion(item) {
 function checkAnswer() {
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
+    //let countArray = yunMuArray.slice();
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
     // change to make any of the three available arrays
