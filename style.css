@@ -22,7 +22,7 @@ nav a {
     padding: 2px 16px;
     text-decoration: none;
     font-size: 22px;
-    text-transform:; 
+    
   }
   
   /* Change the link color on hover */
@@ -43,7 +43,7 @@ h1 {
 }
 
 #container {
-  display: flex;
+  position: fixed;
   align-content: center;
   justify-content: center;
   
@@ -63,4 +63,13 @@ h1 {
 #giant-button:hover {
   cursor: pointer;
   background-color:  #F2BDBD;
+}
+
+#bamboo img {
+  top: 40%;
+  left: 85%;
+  bottom: 50%;
+  height: 800px;
+  opacity: .2;
+  
 }

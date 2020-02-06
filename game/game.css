@@ -16,7 +16,7 @@
 }
 
 button {
-    background-color: transparent;
+    background-color: white;
     color: teal;
     margin-top: 30px;
     border-radius: 1rem;
@@ -27,7 +27,7 @@ button {
 }
 
 #sound-button {
-    background-color: #8FBFB6;
+    background-color: #white;
     width: 50%;
     margin-bottom: 50px;
 }
@@ -94,8 +94,6 @@ h1#testname {
     position: relative;
     width: 50%;
     height: 387px;
-    /* border: 1px solid rgb(0, 0, 0); */
-    /* background-color: rgb(46, 106, 139); */
     margin: 10px auto;
     opacity: .5;
     bottom: 402px;
