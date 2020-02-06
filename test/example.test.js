@@ -51,7 +51,7 @@ test('filterDuplicates', function(assert) {
     const choiceIndex = 0;
     const expected = [{ id: 'm', name: 'm', audio: '../assets/shengmu/m.mp3' },
         { id: 'f', name: 'f', audio: '../assets/shengmu/f.mp3' }];
-    const result = filterDuplicates(filterChoices,choiceIndex);
+    const result = filterDuplicates(filterChoices, choiceIndex);
 
     assert.deepEqual(result, expected);
 
