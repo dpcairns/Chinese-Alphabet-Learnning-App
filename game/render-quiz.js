@@ -117,9 +117,9 @@ function checkAnswer() {
 function nextQuestion() {
     console.log(currentQuestion);
     const questionIndex = quizQuestions.indexOf(currentQuestion);
-    document.getElementById('next-button').style.visibility = 'hidden';
     answerButton.visibility = 'visible';
     quizQuestions.splice(questionIndex, 1);
+    document.getElementById('next-button').style.visibility = 'hidden';
 
     while (choiceText.firstChild) {
         choiceText.removeChild(choiceText.firstChild);
