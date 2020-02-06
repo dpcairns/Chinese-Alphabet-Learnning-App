@@ -64,7 +64,8 @@ input[name="r"]{
 }
 
 #r1:checked ~ .s1{
-  margin-left: 0;
+  margin-left: 4%;
+  width: 100%;
 }
 #r2:checked ~ .s1{
   margin-left: -20%;
@@ -72,4 +73,11 @@ input[name="r"]{
 #r3:checked ~ .s1{
   margin-left: -40%;
 }
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
 
+p {
+  font-size: 26px;
+  margin-top: 40px;
+}

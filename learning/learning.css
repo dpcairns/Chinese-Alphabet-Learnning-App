@@ -33,6 +33,15 @@ body {
     margin: 100px auto 150px auto;
 }
 
+#intro-learning {
+    display: flex;
+    width: 100%;
+}    
+
+#how {
+    width: 100%;
+}
+
 .yunmu-button {   
     background-color: white;
     color: teal;
