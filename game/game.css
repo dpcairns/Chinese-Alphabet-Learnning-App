@@ -31,9 +31,6 @@ label:active {
     color: rgb(25, 116, 114);
 }
 
-
-
-
 #testpage {
     position: relative;
     z-index: 2;
@@ -113,7 +110,7 @@ button:disabled {
 }
 
 .testname {
-    margin-top: 50px;
+    margin-top: 0px;
     
 }
 
