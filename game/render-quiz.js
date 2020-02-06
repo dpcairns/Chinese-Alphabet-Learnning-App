@@ -141,7 +141,7 @@ function generateQuestion(arr, fullArray) {
     currentQuestion = selectedAnswer;
 
 // generates random choices for the test question
-export function generateRandomChoices(arr, numOfChoices, isNot) {
+ function generateRandomChoices(arr, numOfChoices, isNot) {
     //passing in the full now so answer will be there.
     const output = [];
     const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;

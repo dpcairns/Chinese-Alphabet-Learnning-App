@@ -1,10 +1,7 @@
 import { getUser } from '../utils/getuser.js';
-import { selectedSection } from '../game/render-quiz.js';
-import { saveUser } from '../utils/saveuser.js';
-import { resetTestSection } from '../utils/resetTestSection,js';
+
 
 const user = getUser();
-const resetButton = document.getElementById('reset-button');
 
 //-------------------------------------------------//
 
@@ -35,6 +32,3 @@ const chart = new Chart(ctx, {
 });
 
 
-resetButton.addEventListener('click', () =>{
-    resetTestSection();
-})
