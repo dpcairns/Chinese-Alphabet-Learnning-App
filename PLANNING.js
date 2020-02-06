@@ -49,3 +49,9 @@ Create the alphabet Data as an array of objects --  1. id 2. name 3. audio sourc
 - 2nd test display that integrates into 1st test display
 - compare different users test results
 - spaced repetition algorithm (display test questions based on previously incorrect answers)
+
+
+*Future Goals*
+-Allows users nevigate from test and when they return the test, it will remember the user's state and test progress
+-Saving users results for future comparison 
+-Different styles of questions
