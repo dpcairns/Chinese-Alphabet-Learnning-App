@@ -1,7 +1,5 @@
 import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 
-
-
 //change forEach iterater name to item or something.
 shengMu.data.forEach(shengMu => {
 
