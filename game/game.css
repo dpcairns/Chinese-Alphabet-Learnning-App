@@ -4,7 +4,7 @@
 }
 
 #testpage {
-    margin-top: 150px;
+    margin-top: 125px;
     padding-top: 15px;
     border: 1px solid black;
     width: 50%;
@@ -33,11 +33,14 @@ button:hover {
 }
 
 #display-test {
-    margin-top: 50px;
+    margin-top: 30px;
+    font-size: 24px;
+
 }
 
 input {
-    margin: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     
 }
 
@@ -61,4 +64,21 @@ body {
 
 button:disabled {
    display: none;
+}
+
+.testname {
+    margin-top: 50px;
+    
+}
+
+h1#testname {
+    font-size: 48px;
+    top: 100px;
+    position: relative;
+    left: 25%;
+    background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
+    width: 50%;
+    border-radius: 1.4rem;
+    
+    
 }

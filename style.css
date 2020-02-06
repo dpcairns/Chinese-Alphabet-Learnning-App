@@ -48,3 +48,17 @@ h1 {
   justify-content: center;
   
 }
+
+#giant-button {
+  margin: 20px;
+  width: 80%;
+  height: 700px;
+  font-size: 150px;
+  padding: 25px;
+  border: 5px solid lightblue;
+}
+
+#giant-button:hover {
+  cursor: pointer;
+  background-color:  #F2BDBD;
+}

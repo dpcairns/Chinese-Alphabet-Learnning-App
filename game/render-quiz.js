@@ -1,9 +1,11 @@
 import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
+import { filterDuplicates, filterChoices } from './generateRandomChoices.js';
+
 
 const user = getUser();
-console.log(user);
+// console.log(user);
 
 //set when generateQuestion is called
 let currentQuestion;
@@ -11,7 +13,7 @@ let currentQuestion;
 let selectedSection;
 const sectionId = localStorage.getItem('section');
 
-console.log(sectionId);
+// console.log(sectionId);
 
 if (sectionId === 'shengMu') {
     selectedSection = shengMu;
@@ -22,6 +24,7 @@ if (sectionId === 'shengMu') {
 }
 
 const quizQuestions = selectedSection.data.slice();
+document.getElementById('next-button').style.visibility = 'hidden';
 // let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
 // console.log(currentQuestion);
 
@@ -53,12 +56,10 @@ soundButton.addEventListener('click', () => {
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
-    // answerButton.disabled = true;
+    answerButton.disabled = true;
 
 
 });
-
-document.getElementById('next-button').style.visibility = 'hidden';
 
 nextButton.addEventListener('click', () => {
     nextQuestion();
@@ -77,12 +78,10 @@ function populateQuestion(item) {
         const answerOption = document.createElement('input');
         label.textContent = item;
         answerOption.value = item;
-        answerOption.checked = true;
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         choiceText.appendChild(answerOption);
-
     });
 }
 
@@ -92,31 +91,29 @@ function checkAnswer() {
     //let countArray = yunMuArray.slice();
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
-        // change to make any of the three available arrays
+    // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
-        displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id;
+        displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id + '.';
         user[selectedSection.id].incorrect++;
     }
-    answerButton.disabled = true;
-    saveUser(user);
-    document.getElementById('next-button').style.visibility = 'visible';
-
+    saveUser(user);   
     if (quizQuestions.length === 1) {
         user[selectedSection.id].completed = true;
         saveUser(user);
-        console.log(user);
-        window.location = '../results/';
-
-    }
+        window.location = '../results';
+    } 
+    document.getElementById('next-button').style.visibility = 'visible';
 }
 
 function nextQuestion() {
-    console.log(currentQuestion);
+    
     const questionIndex = quizQuestions.indexOf(currentQuestion);
-    document.getElementById('next-button').style.visibility = 'hidden';
+
     answerButton.visibility = 'visible';
+
     quizQuestions.splice(questionIndex, 1);
+    document.getElementById('next-button').style.visibility = 'hidden';
 
     while (choiceText.firstChild) {
         choiceText.removeChild(choiceText.firstChild);
@@ -129,7 +126,7 @@ function nextQuestion() {
 
 // generating a random number by the length of the array
 function generateQuestion(arr, fullArray) {
-
+    
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
     const selectedAnswer = arr[index];
@@ -137,6 +134,9 @@ function generateQuestion(arr, fullArray) {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
+    // console.log(selectedAnswer.id, 'selectedAnswer.id');
+    // console.log(fullArray, 'fullArray');
+    
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
@@ -144,14 +144,14 @@ function generateQuestion(arr, fullArray) {
 
 
 // generates random choices for the test question
-function generateRandomChoices(arr, numOfChoices, isNot) {
+export function generateRandomChoices(arr, numOfChoices, isNot) {
     //passing in the full now so answer will be there.
     const output = [];
     const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
     //filtering out the correct answer
-    let filteredChoices = arr.filter(item => {
-        return item.id !== isNot;
-    });
+    let filteredChoices = filterChoices(arr, isNot);
+
+    // console.log(filteredChoices);
 
     // loop through the array and grab a random choice for each number of choices that don't match.
     for (let i = 0; i < numOfChoices; i++) {
@@ -161,9 +161,7 @@ function generateRandomChoices(arr, numOfChoices, isNot) {
         output.push(filteredChoices[choiceIndex].id);
 
         // checking that the current array isn't duplicated        
-        filteredChoices = filteredChoices.filter(item => {
-            return item !== filteredChoices[choiceIndex];
-        });
+        filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
     }
     return [
         ...output.slice(0, insertIndex),
