@@ -33,6 +33,15 @@ body {
     margin: 100px auto 150px auto;
 }
 
+#intro-learning {
+    display: flex;
+    width: 100%;
+}    
+
+#how {
+    width: 100%;
+}
+
 .yunmu-button {   
     background-color: white;
     color: teal;
@@ -87,6 +96,16 @@ body {
     font-size: 20px;
 }
 
-#zhengti-desc, #yunmu-desc {
-    margin-top: 50px;
-}
+#panda {
+    position: fixed;
+    top: 9%;
+    bottom: 45%;
+    left: 35%;
+    
+  }
+  
+  img {
+    max-width: 15vw;
+    position: fixed;
+    bottom: 74.5%;
+  }

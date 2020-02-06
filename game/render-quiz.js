@@ -10,7 +10,7 @@ const user = getUser();
 //set when generateQuestion is called
 let currentQuestion;
 //set to the whichever button the user clicks
-let selectedSection;
+export let selectedSection;
 const sectionId = localStorage.getItem('section');
 
 // console.log(sectionId);
@@ -25,8 +25,6 @@ if (sectionId === 'shengMu') {
 
 const quizQuestions = selectedSection.data.slice();
 document.getElementById('next-button').style.visibility = 'hidden';
-// let currentQuestion = generateQuestion(quizQuestions,selectedSection.data);
-// console.log(currentQuestion);
 
 //assigning at generateQuestion function
 let sound = null;
@@ -38,6 +36,7 @@ const audio = document.getElementById('randomSoundFromData');
 const nextButton = document.getElementById('next-button');
 const displayResult = document.getElementById('display-test');
 const answerButton = document.getElementById('answer-button');
+const testName = document.getElementById('testname');
 
 generateQuestion(quizQuestions, selectedSection.data);
 
@@ -49,15 +48,25 @@ soundButton.addEventListener('click', () => {
     audio.play();
 });
 
+testName.textContent = selectedSection.title;
+
 //populateQuestion(currentQuestion);
 
-
+const rightOrWrongAlert = document.getElementById('right-wrong-box');
 
 choiceForm.addEventListener('submit', (e) => {
     e.preventDefault();
     checkAnswer();
     answerButton.disabled = true;
 
+
+    const formData = new FormData(choiceForm);
+    const userChoice = formData.get('answers');
+    if (userChoice === currentQuestion.id) {
+        rightOrWrongAlert.className = 'right-answer';
+    } else {
+        rightOrWrongAlert.className = 'wrong-answer';
+    }
 
 });
 
@@ -66,6 +75,7 @@ nextButton.addEventListener('click', () => {
     displayResult.textContent = '';
     answerButton.disabled = false;
 
+    rightOrWrongAlert.className = '';
 });
 
 //populateQuestion is called in generateQuestion.
@@ -75,13 +85,16 @@ function populateQuestion(item) {
 
     choices.forEach(item => {
         const label = document.createElement('label');
+        const span = document.createElement('span');
         const answerOption = document.createElement('input');
-        label.textContent = item;
+        span.textContent = item;
+        label.className = 'cool-label';
         answerOption.value = item;
         answerOption.type = 'radio';
         answerOption.name = 'answers';
         choiceText.appendChild(label);
         label.appendChild(answerOption);
+        label.appendChild(span);
     });
 }
 
@@ -118,9 +131,7 @@ function nextQuestion() {
         choiceText.removeChild(choiceText.firstChild);
     }
     generateQuestion(quizQuestions, selectedSection.data);
-    // currentQuestion = generateQuestion(quizQuestions, selectedSection.data);
-    // sound = currentQuestion.audio;
-    // populateQuestion(currentQuestion);
+    
 }
 
 // generating a random number by the length of the array
@@ -133,39 +144,34 @@ function generateQuestion(arr, fullArray) {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
-    // console.log(selectedAnswer.id, 'selectedAnswer.id');
-    // console.log(fullArray, 'fullArray');
     
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
-}
-
 
 // generates random choices for the test question
-export function generateRandomChoices(arr, numOfChoices, isNot) {
+    function generateRandomChoices(arr, numOfChoices, isNot) {
     //passing in the full now so answer will be there.
-    const output = [];
-    const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
+        const output = [];
+        const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
     //filtering out the correct answer
-    let filteredChoices = filterChoices(arr, isNot);
-
-    // console.log(filteredChoices);
+        let filteredChoices = filterChoices(arr, isNot);
 
     // loop through the array and grab a random choice for each number of choices that don't match.
-    for (let i = 0; i < numOfChoices; i++) {
-        let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
+        for (let i = 0; i < numOfChoices; i++) {
+            let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
 
         // populate the empty array with .push for each choice needed
-        output.push(filteredChoices[choiceIndex].id);
+            output.push(filteredChoices[choiceIndex].id);
 
         // checking that the current array isn't duplicated        
-        filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
+            filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
+        }
+        return [
+            ...output.slice(0, insertIndex),
+            isNot,
+            ...output.slice(insertIndex)
+        ];
     }
-    return [
-        ...output.slice(0, insertIndex),
-        isNot,
-        ...output.slice(insertIndex)
-    ];
-}
 
+}

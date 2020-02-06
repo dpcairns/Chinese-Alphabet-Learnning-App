@@ -3,7 +3,40 @@
     text-align: center;
 }
 
+input {
+    display: none;
+    width: 40px;
+    padding: 10px;
+}
+
+span {
+    margin: 0 20px;
+}
+
+input, label:hover {
+    cursor: pointer;
+    opacity: .5;    
+    border-radius: 1rem;
+}
+
+input:checked + span {
+    background-color: rgb(219, 113, 129);
+    border-radius: 1rem;
+    border: 2px solid rgb(152, 193, 152);
+    padding: 10px;
+}
+
+
+label:active {   
+    color: rgb(25, 116, 114);
+}
+
+
+
+
 #testpage {
+    position: relative;
+    z-index: 2;
     margin-top: 125px;
     padding-top: 15px;
     border: 1px solid black;
@@ -14,7 +47,7 @@
 }
 
 button {
-    background-color: transparent;
+    background-color: white;
     color: teal;
     margin-top: 30px;
     border-radius: 1rem;
@@ -25,7 +58,7 @@ button {
 }
 
 #sound-button {
-    background-color: #8FBFB6;
+    background-color: white;
     width: 50%;
     margin-bottom: 50px;
 }
@@ -86,6 +119,25 @@ h1#testname {
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
     width: 50%;
     border-radius: 1.4rem;
-    
-    
 }
+
+#right-wrong-box {
+    position: relative;
+    width: 50%;
+    height: 387px;
+    margin: 10px auto;
+    opacity: .5;
+    bottom: 402px;
+    z-index: 1;
+}
+
+.right-answer {
+    border: 2px solid lightgreen;
+    background-color: seagreen;
+}
+
+.wrong-answer {
+    border: 2px solid rgb(184, 41, 41);
+    background-color:  rgb(179, 21, 21);
+}
+

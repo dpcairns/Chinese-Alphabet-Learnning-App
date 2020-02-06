@@ -5,7 +5,6 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
     const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
     //filtering out the correct answer
     let filteredChoices = filterChoices(arr, isNot);
-    console.log(filteredChoices);
     // loop through the array and grab a random choice for each number of choices that don't match.
     for (let i = 0; i < numOfChoices; i++) {
         let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
@@ -24,7 +23,6 @@ export function filterDuplicates(filteredChoices, choiceIndex) {
     filteredChoices = filteredChoices.filter(item => {
         return item !== filteredChoices[choiceIndex];
     });
-    console.log(filteredChoices);
     return filteredChoices;
 }
 

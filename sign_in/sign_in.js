@@ -15,7 +15,7 @@ userSignUp.addEventListener('submit', (e) => {
     const user = makeUser(formData);
     saveUser(user);
     window.location = '../learning';
-    console.log(user);
+    (user);
 });
 
 
