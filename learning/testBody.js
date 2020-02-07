@@ -4,21 +4,22 @@ import { resetTestSection } from '../results/results.js';
 
 const section = localStorage.getItem('section');
 
-
 const user = getUser();
-//changed to localstorage instead of URLsearchParams.
+
 function renderLink(singleSection) {
     const nav = document.getElementById('test-nav');
-    //now a button instead of a link
+
+    // create button for the test
     const link = document.createElement('button');
     link.classList.add('singleSection');
     nav.appendChild(link);
     link.textContent = singleSection.title;
-    //test to see if we're using
     link.setAttribute('id', singleSection.id);
+
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
-        //retry test function cannot clear out previously taken tests if they are not rest at completion. only looks at the most recent test.         
+
+        //retry test function cannot clear out previously taken tests if they are not rest at completion. only looks at the most recent test.  
         link.textContent = 'take the test again';
         link.style.backgroundColor = '#F2133C';
     }
