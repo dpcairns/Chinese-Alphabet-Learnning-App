@@ -19,7 +19,7 @@ function renderLink(singleSection) {
     //when user completes a section of the alphabet, disable that section.
     if (user[singleSection.id].completed) {
         //retry test function cannot clear out previously taken tests if they are not rest at completion. only looks at the most recent test.         
-        link.textContent = 'test completed';
+        link.textContent = 'take the test again';
         link.style.backgroundColor = '#F2133C';
     }
 
