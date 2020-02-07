@@ -17,6 +17,7 @@ body {
 
 #results {
     margin-top: 50px;
+    
 }
 
 h1 {
@@ -27,4 +28,17 @@ h1 {
     width: 40%;
     margin: 0 auto;
     text-align: center;
+}
+
+.chart-container {
+    margin-left: 150px;
+    height: 11vh; 
+    width: 84vw;
+    margin-bottom: 40px;
+    padding-bottom: 100px;
+    
+} 
+
+canvas {
+    height: 20vh;
 }
