@@ -13,17 +13,17 @@ const chart = new Chart(ctx, {
     fillOpacity: .3,
     // The data for our dataset
     data: {
-        labels: ['Yun Mu', 'Sheng Mu', 'Zheng Ti'],
+        labels: ['Sheng Mu', 'Yun Mu', 'Zheng Ti'],
         datasets: [{
             label: 'Correct',
             backgroundColor: '#8FBFB6',
             borderColor: 'white',
-            data: [user.yunMu.correct, user.shengMu.correct, user.zhengTi.correct]
+            data: [user.shengMu.correct, user.yunMu.correct, user.zhengTi.correct]
         }, {
             label: 'Incorrect',
             backgroundColor: '#F2133C',
             borderColor: 'white',
-            data: [user.yunMu.incorrect, user.shengMu.incorrect, user.zhengTi.incorrect]
+            data: [user.shengMu.incorrect, user.yunMu.incorrect, user.zhengTi.incorrect]
         }]
     },
 
