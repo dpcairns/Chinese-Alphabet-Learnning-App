@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import example from '../src/example.js';
-import { generateRandomChoices, filterDuplicates } from '../game/generateRandomChoices.js';
-import { filterChoices } from '../game/generateRandomChoices.js';
+import { generateRandomChoices, filterDuplicates, filterChoices } from '../game/generateRandomChoices.js';
+// import { filterChoices } from '../game/generateRandomChoices.js';
 
 const test = QUnit.test;
 

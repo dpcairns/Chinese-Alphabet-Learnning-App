@@ -25,13 +25,13 @@ body{
 .bar{
   width: 50px;
   height: 15px;
-  border: 2px solid #fff;
+  border: 2px solid black;
   margin-top: 30px;
   margin-left: 6px;
   margin-right: 6px;
   cursor: pointer;
   transition: 0.4s;
-  background: #fff;
+  background: transparent;
 }
 .bar:hover{
   background: #F2BDBD;
@@ -80,4 +80,5 @@ input[name="r"]{
 p {
   font-size: 26px;
   margin-top: 40px;
+  text-align: left;
 }
