@@ -101,25 +101,30 @@ function populateQuestion(item) {
 function checkAnswer() {
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
+    const answerSound = document.getElementById('wrong-or-right');
     if (userChoice === currentQuestion.id) {
         displayResult.textContent = 'Good Job!';
-    // change to make any of the three available arrays
+        answerSound.src = '../assets/correct.mp3';
+        answerSound.play();
+        // change to make any of the three available arrays
         user[selectedSection.id].correct++;
     } else {
         displayResult.textContent = 'Oops! Wrong answer. The correct answer is ' + currentQuestion.id + '.';
+        answerSound.src = '../assets/incorrect.mp3';
+        answerSound.play();
         user[selectedSection.id].incorrect++;
     }
-    saveUser(user);   
+    saveUser(user);
     if (quizQuestions.length === 1) {
         user[selectedSection.id].completed = true;
         saveUser(user);
         window.location = '../results';
-    } 
+    }
     document.getElementById('next-button').style.visibility = 'visible';
 }
 
 function nextQuestion() {
-    
+
     const questionIndex = quizQuestions.indexOf(currentQuestion);
 
     answerButton.visibility = 'visible';
@@ -131,12 +136,12 @@ function nextQuestion() {
         choiceText.removeChild(choiceText.firstChild);
     }
     generateQuestion(quizQuestions, selectedSection.data);
-    
+
 }
 
 // generating a random number by the length of the array
 function generateQuestion(arr, fullArray) {
-    
+
     let index = Math.floor(Math.random() * arr.length);
     // assigning a random item from the array as correct answer. getting a random object from passed in array.
     const selectedAnswer = arr[index];
@@ -144,27 +149,27 @@ function generateQuestion(arr, fullArray) {
 
     // changed property to choices which now holds all choice including correct answer
     selectedAnswer.choices = generateRandomChoices(fullArray, 3, selectedAnswer.id);
-    
+
     sound = selectedAnswer.audio;
     populateQuestion(selectedAnswer);
     currentQuestion = selectedAnswer;
 
-// generates random choices for the test question
+    // generates random choices for the test question
     function generateRandomChoices(arr, numOfChoices, isNot) {
-    //passing in the full now so answer will be there.
+        //passing in the full now so answer will be there.
         const output = [];
         const insertIndex = Math.floor(Math.random() * 4 + 1) - 1;
-    //filtering out the correct answer
+        //filtering out the correct answer
         let filteredChoices = filterChoices(arr, isNot);
 
-    // loop through the array and grab a random choice for each number of choices that don't match.
+        // loop through the array and grab a random choice for each number of choices that don't match.
         for (let i = 0; i < numOfChoices; i++) {
             let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
 
-        // populate the empty array with .push for each choice needed
+            // populate the empty array with .push for each choice needed
             output.push(filteredChoices[choiceIndex].id);
 
-        // checking that the current array isn't duplicated        
+            // checking that the current array isn't duplicated        
             filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
         }
         return [
