@@ -102,8 +102,8 @@ body {
     /* top: 9%; */
     bottom: 45%;
     left: 36%;
-    
-  }
+    z-index: 1;
+}
   
   img {
     max-width: 15vw;
