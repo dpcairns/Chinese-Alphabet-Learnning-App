@@ -99,6 +99,7 @@ h1 {
 body {
     background-image: url('../assets/imgs/background.png');
     background-size: cover;
+    height: 900px;
 }
 
 #next {
@@ -143,3 +144,20 @@ h1#testname {
     border: 2px solid rgb(184, 41, 41);
     background-color:  rgb(179, 21, 21);
 }
+
+#bamboo {
+    float: right;
+    position: fixed;
+    bottom: 200px;
+    width: 20%;
+    height: 100%;
+    
+  }
+
+img {
+    max-width: 15vw;
+    bottom: 70.3%;
+    left: 30%;
+    position: fixed;
+ }
+  
