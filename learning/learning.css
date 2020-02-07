@@ -14,7 +14,7 @@ span {
 }
 
 h1 {
-    padding: 20px;
+    padding: 15px;
     background-image: linear-gradient(to right, transparent,#F2BDBD, transparent) ;
     border-radius: 1.4rem;
     background-size: cover;
@@ -91,6 +91,7 @@ body {
 }
 
 .hint {
+    text-align: center;
     margin-top: 10px;
     opacity: .5;
     font-size: 20px;
@@ -98,7 +99,7 @@ body {
 
 #panda {
     position: fixed;
-    top: 9%;
+    /* top: 9%; */
     bottom: 45%;
     left: 36%;
     
@@ -107,6 +108,6 @@ body {
   img {
     max-width: 15vw;
     position: fixed;
-    bottom: 74.5%;
+    bottom: 74.7%;
   }
 
