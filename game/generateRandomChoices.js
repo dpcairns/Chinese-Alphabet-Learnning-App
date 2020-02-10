@@ -19,6 +19,15 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
         ...output.slice(insertIndex)
     ];
 }
+
+
+
+export function filterChoices(arr, isNot) {
+    return arr.filter(item => {
+        return item.id !== isNot;
+    });
+}
+
 export function filterDuplicates(filteredChoices, choiceIndex) {
     filteredChoices = filteredChoices.filter(item => {
         return item !== filteredChoices[choiceIndex];
@@ -26,9 +35,4 @@ export function filterDuplicates(filteredChoices, choiceIndex) {
     return filteredChoices;
 }
 
-export function filterChoices(arr, isNot) {
-    return arr.filter(item => {
-        return item.id !== isNot;
-    });
-}
 

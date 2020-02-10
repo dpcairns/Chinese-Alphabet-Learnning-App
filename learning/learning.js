@@ -1,9 +1,14 @@
 import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
 
+
+const zhengTiSection = document.getElementById('zhengTi-section');
+const shengMuSection = document.getElementById('shengMu-section');
+const yunMuSection = document.getElementById('yunmu-section');
+
+
 //change forEach iterater name to item or something.
 shengMu.data.forEach(shengMu => {
-
-    const shengMuSection = document.getElementById('shengMu-section');
+    //const alphabetSpan = document.createElement('span');
     const shengMuSpan = document.createElement('span');
     const button = document.createElement('button');
     shengMuSection.appendChild(button);
@@ -26,7 +31,6 @@ shengMu.data.forEach(shengMu => {
 
 yunMu.data.forEach(yunMu => {
 
-    const yunMuSection = document.getElementById('yunmu-section');
     const yunMuSpan = document.createElement('span');
     const button = document.createElement('button');
     yunMuSection.appendChild(button);
@@ -49,7 +53,6 @@ yunMu.data.forEach(yunMu => {
 
 zhengTi.data.forEach(zhengTi => {
 
-    const zhengTiSection = document.getElementById('zhengTi-section');
     const zhengTiSpan = document.createElement('span');
     const button = document.createElement('button');
     zhengTiSection.appendChild(button);
@@ -69,3 +72,23 @@ zhengTi.data.forEach(zhengTi => {
 
 });
 
+function renderAlphabetSection(section) {
+
+    const zhengTiSection = document.getElementById('zhengTi-section');
+    const zhengTiSpan = document.createElement('span');
+    const button = document.createElement('button');
+    zhengTiSection.appendChild(button);
+    button.appendChild(zhengTiSpan);
+    button.className = 'zhengti-button';
+    zhengTiSpan.textContent = zhengTi.name;
+    zhengTiSpan.title = zhengTi.description;
+
+    button.addEventListener('click', () => {
+        const audio = document.getElementById('audio');
+        audio.src = zhengTi.audio;
+        audio.type = 'audio/mp3';
+        audio.play();
+        button.appendChild(audio);
+
+    });
+}

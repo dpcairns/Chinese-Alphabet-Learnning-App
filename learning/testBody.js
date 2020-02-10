@@ -26,11 +26,11 @@ function renderLink(singleSection) {
     return link;
 
 }
-for (let i = 0; i < alphabetData.length; i++) {
-    //singlesection is being assigned to the full object of shengmu, yunmu,zhengti.
-    const singleSection = alphabetData[i];
-    renderLink(singleSection);
-}
+    alphabetData.forEach((item) => {
+        const singleSection = item;
+        renderLink(singleSection);
+    });
+
 
 //does this need to be all
 document.querySelectorAll('.singleSection').forEach(item => {
