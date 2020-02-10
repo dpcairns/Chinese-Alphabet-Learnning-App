@@ -1,5 +1,4 @@
-import { saveUser } from '../utils/userUtils.js';
-import { makeUser } from '../utils/makeuser.js';
+import { saveUser, makeUser } from '../utils/userUtils.js';
 
 // gabbing some dom
 const userSignUp = document.getElementById('user-sign-up');
