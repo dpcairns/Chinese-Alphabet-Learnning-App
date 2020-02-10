@@ -1,7 +1,4 @@
-import { getUser } from '../utils/getuser.js';
-import { saveUser } from '../utils/saveuser.js';
-
-
+import { getUser, saveUser } from '../utils/userUtils.js';
 
 
 export function resetTestSection() {

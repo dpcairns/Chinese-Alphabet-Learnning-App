@@ -6,6 +6,7 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
     //filtering out the correct answer
     let filteredChoices = filterChoices(arr, isNot);
     // loop through the array and grab a random choice for each number of choices that don't match.
+
     for (let i = 0; i < numOfChoices; i++) {
         let choiceIndex = Math.floor(Math.random() * filteredChoices.length);
         // populate the empty array with .push for each choice needed
@@ -13,6 +14,9 @@ export function generateRandomChoices(arr, numOfChoices, isNot) {
         // checking that the current array isn't duplicated        
         filteredChoices = filterDuplicates(filteredChoices, choiceIndex);
     }
+
+
+
     return [
         ...output.slice(0, insertIndex),
         isNot,

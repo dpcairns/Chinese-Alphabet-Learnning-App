@@ -1,5 +1,5 @@
 import { alphabetData } from '../data/alphabetData.js';
-import { getUser } from '../utils/getuser.js';
+import { getUser } from '../utils/userUtils.js';
 import { resetTestSection } from '../results/results.js';
 
 const section = localStorage.getItem('section');
@@ -31,10 +31,6 @@ alphabetData.forEach(singleSection =>{
       //singlesection is being assigned to the full object of shengmu, yunmu,zhengti.
     renderLink(singleSection);
 });
-// for (let i = 0; i < alphabetData.length; i++) {
-//     const singleSection = alphabetData[i];
-//     renderLink(singleSection);
-// }
 
 //does this need to be all
 document.querySelectorAll('.singleSection').forEach(item => {

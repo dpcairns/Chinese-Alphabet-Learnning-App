@@ -1,4 +1,4 @@
-import { saveUser } from '../utils/saveuser.js';
+import { saveUser } from '../utils/userUtils.js';
 import { makeUser } from '../utils/makeuser.js';
 
 // gabbing some dom
