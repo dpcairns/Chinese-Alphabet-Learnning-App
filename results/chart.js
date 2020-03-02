@@ -1,9 +1,24 @@
 import { getUser } from '../utils/getuser.js';
 
 
-const user = getUser();
-
 //-------------------------------------------------//
+
+// could destructure like so if you wanted to
+const {
+    shengMu: {
+        correct: shengMuCorrect,
+        incorrect: shengMuIncorrect
+
+    },
+    yunMu: {
+        correct: yunMuCorrect,
+        incorrect: yunMuIncorrect
+    },
+    zhengTi: {
+        correct: zhengTiCorrect,
+        incorrect: zhengTiIncorrect,
+    }
+} = getUser();
 
 const ctx = document.getElementById('results-chart').getContext('2d');
 const chart = new Chart(ctx, {
@@ -18,12 +33,12 @@ const chart = new Chart(ctx, {
             label: 'Correct',
             backgroundColor: '#8FBFB6',
             borderColor: 'white',
-            data: [user.shengMu.correct, user.yunMu.correct, user.zhengTi.correct]
+            data: [shengMuCorrect, yunMuCorrect, zhengTiCorrect]
         }, {
             label: 'Incorrect',
             backgroundColor: '#F2133C',
             borderColor: 'white',
-            data: [user.shengMu.incorrect, user.yunMu.incorrect, user.zhengTi.incorrect]
+            data: [shengMuIncorrect, yunMuIncorrect, zhengTiIncorrect]
         }]
     },
 

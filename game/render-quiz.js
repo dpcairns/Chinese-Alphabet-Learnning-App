@@ -1,8 +1,9 @@
-import { shengMu, yunMu, zhengTi } from '../data/alphabetData.js';
+import * as sections from '../data/alphabetData.js';
 import { getUser } from '../utils/getuser.js';
 import { saveUser } from '../utils/saveuser.js';
 import { generateRandomChoices } from './generateRandomChoices.js';
 
+// nice single responsibility principle here
 
 const user = getUser();
 // console.log(user);
@@ -10,18 +11,8 @@ const user = getUser();
 //set when generateQuestion is called
 let currentQuestion;
 //set to the whichever button the user clicks
-export let selectedSection;
+export let selectedSection = sections[sectionId]; // could probably just use the export object as a hashmap here, since the string matches the key
 const sectionId = localStorage.getItem('section');
-
-// console.log(sectionId);
-
-if (sectionId === 'shengMu') {
-    selectedSection = shengMu;
-} else if (sectionId === 'yunMu') {
-    selectedSection = yunMu;
-} else if (sectionId === 'zhengTi') {
-    selectedSection = zhengTi;
-}
 
 const quizQuestions = selectedSection.data.slice();
 document.getElementById('next-button').style.visibility = 'hidden';
@@ -60,12 +51,10 @@ choiceForm.addEventListener('submit', (e) => {
 
     const formData = new FormData(choiceForm);
     const userChoice = formData.get('answers');
-    if (userChoice === currentQuestion.id) {
-        rightOrWrongAlert.className = 'right-answer';
-    } else {
-        rightOrWrongAlert.className = 'wrong-answer';
-    }
 
+    rightOrWrongAlert.className = userChoice === currentQuestion.id
+        ? 'right-answer'
+        : 'wrong-answer';
 });
 
 nextButton.addEventListener('click', () => {
@@ -114,7 +103,7 @@ function checkAnswer() {
     }
     saveUser(user);
     if (quizQuestions.length === 1) {
-        user[selectedSection.id].completed = true;
+        user[selectedSection.id].completed = true; // nice property drilling!
         saveUser(user);
         window.location = '../results';
     }
